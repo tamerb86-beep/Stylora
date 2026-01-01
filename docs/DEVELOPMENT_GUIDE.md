@@ -56,7 +56,7 @@ cd Stylora
 pnpm install
 
 # Copy environment variables
-cp env.example.txt .env
+cp .env.example .env
 # Edit .env with your configuration
 
 # Set up database
