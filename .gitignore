@@ -106,3 +106,7 @@ temp/
 *.sqlite
 *.sqlite3
 logs/
+
+# Keep root directory clean
+# Place utility scripts in /tools directory
+# Place documentation in /docs directory
