@@ -148,12 +148,18 @@ barbertime-website/
 │       └── lib/           # Utilities
 ├── server/                # Backend Express app
 │   ├── _core/            # Core server logic
-│   ├── routers.ts        # tRPC routers
-│   └── db.ts             # Database functions
+│   ├── routers/          # tRPC routers
+│   └── services/         # Business logic services
 ├── shared/               # Shared types & constants
 ├── drizzle/              # Database schema & migrations
 │   ├── schema.ts         # Database schema
-│   └── migrations/       # Migration files
+│   └── *.sql             # Auto-generated migrations
+├── tools/                # Development & maintenance tools
+│   ├── database/         # Database utilities & manual migrations
+│   ├── testing/          # API & integration testing scripts
+│   └── performance/      # Performance analysis & optimization
+├── scripts/              # Build & deployment scripts
+├── docs/                 # Documentation
 └── package.json
 ```
 
