@@ -1,6 +1,6 @@
 /**
  * Unimicro Payment Sync
- * Handles syncing payments and refunds between BarberTime and Unimicro
+ * Handles syncing payments and refunds between Stylora and Unimicro
  */
 
 import { getDb } from "../db";

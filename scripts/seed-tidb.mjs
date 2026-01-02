@@ -15,7 +15,7 @@ async function main() {
   try {
     // Create demo tenant
     console.log('📦 Creating demo tenant...');
-    const tenantId = 'demo-tenant-barbertime';
+    const tenantId = 'demo-tenant-stylora';
     
     // Check if tenant exists
     const [existingTenant] = await conn.query(
@@ -31,7 +31,7 @@ async function main() {
         tenantId,
         'Demo Barbershop',
         'demo-barbershop',
-        'demo@barbertime.no',
+        'demo@stylora.no',
         '+47 12 34 56 78',
         'active',
         true,
@@ -46,7 +46,7 @@ async function main() {
     // Create demo user with password
     console.log('👤 Creating demo user...');
     const passwordHash = await bcrypt.hash('demo123', 10);
-    const demoOpenId = 'demo-owner-barbertime-001';
+    const demoOpenId = 'demo-owner-stylora-001';
     
     // Check if user exists
     const [existingUser] = await conn.query(
@@ -61,7 +61,7 @@ async function main() {
       `, [
         tenantId,
         demoOpenId,
-        'demo@barbertime.no',
+        'demo@stylora.no',
         'Demo Owner',
         '+47 12 34 56 78',
         passwordHash,
@@ -222,7 +222,7 @@ async function main() {
     
     console.log('\n🎉 TiDB seed completed successfully!');
     console.log('\n📝 Demo credentials:');
-    console.log('   Email: demo@barbertime.no');
+    console.log('   Email: demo@stylora.no');
     console.log('   Password: demo123');
     
   } catch (error) {

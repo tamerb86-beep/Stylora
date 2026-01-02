@@ -1,12 +1,12 @@
 # Email Notifications Setup Guide
 
-Complete guide for configuring and using email notifications in BarberTime.
+Complete guide for configuring and using email notifications in Stylora.
 
 ---
 
 ## Overview
 
-BarberTime automatically sends email notifications to customers for:
+Stylora automatically sends email notifications to customers for:
 
 1. **Booking Confirmation** - When appointment status changes to "confirmed"
    - Triggered by Stripe payment completion (webhook)
@@ -36,7 +36,7 @@ SMTP_HOST=smtp.example.com          # Your SMTP server hostname
 SMTP_PORT=587                        # SMTP port (587 for TLS, 465 for SSL)
 SMTP_USER=your-email@example.com    # SMTP username
 SMTP_PASS=your-password              # SMTP password
-SMTP_FROM_EMAIL=no-reply@barbertime.app  # From email address
+SMTP_FROM_EMAIL=no-reply@stylora.app  # From email address
 ```
 
 ### Common SMTP Providers
@@ -186,7 +186,7 @@ SMTP_HOST=sandbox.smtp.mailtrap.io
 SMTP_PORT=2525
 SMTP_USER=your-mailtrap-username
 SMTP_PASS=your-mailtrap-password
-SMTP_FROM_EMAIL=test@barbertime.app
+SMTP_FROM_EMAIL=test@stylora.app
 ```
 
 All emails will be captured in Mailtrap inbox (not sent to real customers).

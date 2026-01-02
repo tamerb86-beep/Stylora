@@ -4,13 +4,13 @@ services:
   # MySQL Database
   db:
     image: mysql:8.0
-    container_name: barbertime-db
+    container_name: stylora-db
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: barbertime_root_password
-      MYSQL_DATABASE: barbertime
-      MYSQL_USER: barbertime_user
-      MYSQL_PASSWORD: barbertime_password
+      MYSQL_ROOT_PASSWORD: stylora_root_password
+      MYSQL_DATABASE: stylora
+      MYSQL_USER: stylora_user
+      MYSQL_PASSWORD: stylora_password
     ports:
       - "3306:3306"
     volumes:
@@ -21,25 +21,25 @@ services:
       timeout: 5s
       retries: 5
 
-  # BarberTime Application
+  # Stylora Application
   app:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: barbertime-app
+    container_name: stylora-app
     restart: unless-stopped
     ports:
       - "3000:3000"
     environment:
       # Database
-      DATABASE_URL: mysql://barbertime_user:barbertime_password@db:3306/barbertime
+      DATABASE_URL: mysql://stylora_user:stylora_password@db:3306/stylora
       
       # JWT
       JWT_SECRET: your-super-secret-jwt-key-change-this-in-production
       
       # App
-      VITE_APP_ID: barbertime
-      VITE_APP_TITLE: BarberTime
+      VITE_APP_ID: stylora
+      VITE_APP_TITLE: Stylora
       NODE_ENV: production
       PORT: 3000
       

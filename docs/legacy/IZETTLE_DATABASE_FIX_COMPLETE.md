@@ -8,7 +8,7 @@ User was experiencing "Database connection error" when trying to connect iZettle
 ### Issue 1: Missing DATABASE_URL Variable
 **Problem**: Application uses `process.env.DATABASE_URL` but Railway MySQL provides `MYSQL_URL`.
 
-**Solution**: Add Variable Reference in Railway barbertime service:
+**Solution**: Add Variable Reference in Railway stylora service:
 ```
 DATABASE_URL = ${{MySQL.MYSQL_URL}}
 ```
@@ -144,7 +144,7 @@ Test Files  1 passed (1)
 
 ### Step 1: Add DATABASE_URL in Railway
 
-1. Open Railway dashboard → barbertime service
+1. Open Railway dashboard → stylora service
 2. Go to **Variables** tab
 3. Click **+ New Variable**
 4. Add:
@@ -187,7 +187,7 @@ Test Files  1 passed (1)
 **Solution**:
 1. Verify DATABASE_URL in Railway Variables
 2. Check MySQL service status (should be "Online")
-3. Restart barbertime service
+3. Restart stylora service
 
 ### Error: "Failed to save connection"
 **Cause**: paymentProviders table doesn't exist or schema mismatch

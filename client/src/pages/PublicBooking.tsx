@@ -36,7 +36,7 @@ export default function PublicBooking() {
       return null; // Return null to show error message
     }
     
-    // Production: Extract subdomain from hostname (e.g., demo-barbertime.barbertime.no)
+    // Production: Extract subdomain from hostname (e.g., demo-stylora.stylora.no)
     const parts = hostname.split('.');
     if (parts.length >= 3) {
       const extractedSubdomain = parts[0];
@@ -285,7 +285,7 @@ export default function PublicBooking() {
               </p>
               <p className="text-sm text-gray-500 mb-2">Eksempel:</p>
               <code className="text-xs bg-gray-100 p-2 rounded block mb-4">
-                {window.location.origin}/book?tenantId=demo-tenant-barbertime
+                {window.location.origin}/book?tenantId=demo-tenant-stylora
               </code>
             </>
           ) : (

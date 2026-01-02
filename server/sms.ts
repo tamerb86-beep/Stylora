@@ -62,7 +62,7 @@ async function getSMSConfig(tenantId?: string): Promise<SMSConfig> {
           provider: tenant.smsProvider,
           apiKey: tenant.smsApiKey,
           apiSecret: tenant.smsApiSecret || undefined,
-          senderId: tenant.smsPhoneNumber || process.env.SMS_SENDER_ID || "BarberTime",
+          senderId: tenant.smsPhoneNumber || process.env.SMS_SENDER_ID || "Stylora",
         };
       }
     } catch (error) {
@@ -78,7 +78,7 @@ async function getSMSConfig(tenantId?: string): Promise<SMSConfig> {
     provider,
     apiKey: process.env.SMS_API_KEY,
     apiSecret: process.env.SMS_API_SECRET,
-    senderId: process.env.SMS_SENDER_ID || "BarberTime",
+    senderId: process.env.SMS_SENDER_ID || "Stylora",
   };
 }
 
@@ -203,7 +203,7 @@ async function sendLinkMobilitySMS(message: SMSMessage, config: SMSConfig): Prom
         source: config.senderId,
         destination: message.to,
         userData: message.message,
-        platformId: "BarberTime",
+        platformId: "Stylora",
         platformPartnerId: config.apiSecret,
       }),
     });

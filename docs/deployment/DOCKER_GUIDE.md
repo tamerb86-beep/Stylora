@@ -60,7 +60,7 @@ VITE_STRIPE_PUBLISHABLE_KEY=pk_test_...
 AWS_ACCESS_KEY_ID=AKIA...
 AWS_SECRET_ACCESS_KEY=...
 AWS_REGION=us-east-1
-AWS_S3_BUCKET=barbertime-uploads
+AWS_S3_BUCKET=stylora-uploads
 AWS_SES_FROM_EMAIL=noreply@yourdomain.com
 ```
 
@@ -72,21 +72,21 @@ AWS_SES_FROM_EMAIL=noreply@yourdomain.com
 
 ```bash
 # بناء image
-docker build -t barbertime:latest .
+docker build -t stylora:latest .
 
 # تشغيل container
 docker run -d \
-  --name barbertime \
+  --name stylora \
   -p 3000:3000 \
   --env-file .env \
-  barbertime:latest
+  stylora:latest
 
 # عرض logs
-docker logs -f barbertime
+docker logs -f stylora
 
 # إيقاف container
-docker stop barbertime
-docker rm barbertime
+docker stop stylora
+docker rm stylora
 ```
 
 ---
@@ -111,7 +111,7 @@ docker-compose logs -f db
 
 # الدخول إلى container
 docker-compose exec app sh
-docker-compose exec db mysql -u barbertime_user -p barbertime
+docker-compose exec db mysql -u stylora_user -p stylora
 
 # إيقاف الخدمات
 docker-compose stop
@@ -133,10 +133,10 @@ docker images
 docker ps -a
 
 # حذف image
-docker rmi barbertime:latest
+docker rmi stylora:latest
 
 # حذف container
-docker rm barbertime
+docker rm stylora
 
 # تنظيف النظام
 docker system prune -a
@@ -156,7 +156,7 @@ docker-compose exec app pnpm db:push
 docker run --rm \
   --network host \
   --env-file .env \
-  barbertime:latest \
+  stylora:latest \
   pnpm db:push
 ```
 
@@ -165,15 +165,15 @@ docker run --rm \
 ```bash
 # Backup
 docker-compose exec db mysqldump \
-  -u barbertime_user \
-  -pbarbertime_password \
-  barbertime > backup.sql
+  -u stylora_user \
+  -pstylora_password \
+  stylora > backup.sql
 
 # Restore
 docker-compose exec -T db mysql \
-  -u barbertime_user \
-  -pbarbertime_password \
-  barbertime < backup.sql
+  -u stylora_user \
+  -pstylora_password \
+  stylora < backup.sql
 ```
 
 ---
@@ -187,14 +187,14 @@ docker-compose exec -T db mysql \
 docker login
 
 # Tag image
-docker tag barbertime:latest yourusername/barbertime:latest
+docker tag stylora:latest yourusername/stylora:latest
 
 # Push to Docker Hub
-docker push yourusername/barbertime:latest
+docker push yourusername/stylora:latest
 
 # Pull and run on server
-docker pull yourusername/barbertime:latest
-docker run -d -p 3000:3000 --env-file .env yourusername/barbertime:latest
+docker pull yourusername/stylora:latest
+docker run -d -p 3000:3000 --env-file .env yourusername/stylora:latest
 ```
 
 ### 2. DigitalOcean App Platform:
@@ -213,9 +213,9 @@ docker run -d -p 3000:3000 --env-file .env yourusername/barbertime:latest
 
 ```bash
 # 1. Push image to ECR
-aws ecr create-repository --repository-name barbertime
-docker tag barbertime:latest AWS_ACCOUNT.dkr.ecr.REGION.amazonaws.com/barbertime:latest
-docker push AWS_ACCOUNT.dkr.ecr.REGION.amazonaws.com/barbertime:latest
+aws ecr create-repository --repository-name stylora
+docker tag stylora:latest AWS_ACCOUNT.dkr.ecr.REGION.amazonaws.com/stylora:latest
+docker push AWS_ACCOUNT.dkr.ecr.REGION.amazonaws.com/stylora:latest
 
 # 2. Create ECS task definition
 # 3. Create ECS service
@@ -225,11 +225,11 @@ docker push AWS_ACCOUNT.dkr.ecr.REGION.amazonaws.com/barbertime:latest
 
 ```bash
 # Build and push to GCR
-gcloud builds submit --tag gcr.io/PROJECT_ID/barbertime
+gcloud builds submit --tag gcr.io/PROJECT_ID/stylora
 
 # Deploy to Cloud Run
-gcloud run deploy barbertime \
-  --image gcr.io/PROJECT_ID/barbertime \
+gcloud run deploy stylora \
+  --image gcr.io/PROJECT_ID/stylora \
   --platform managed \
   --region us-central1 \
   --allow-unauthenticated
@@ -262,7 +262,7 @@ docker-compose ps db
 docker-compose logs db
 
 # الاتصال يدوياً
-docker-compose exec db mysql -u barbertime_user -p
+docker-compose exec db mysql -u stylora_user -p
 ```
 
 ### Build يفشل:
@@ -272,7 +272,7 @@ docker-compose exec db mysql -u barbertime_user -p
 docker-compose build --no-cache
 
 # فحص Dockerfile
-docker build --progress=plain -t barbertime:latest .
+docker build --progress=plain -t stylora:latest .
 ```
 
 ---
@@ -286,7 +286,7 @@ docker build --progress=plain -t barbertime:latest .
 curl http://localhost:3000/api/health
 
 # فحص Docker health status
-docker inspect --format='{{.State.Health.Status}}' barbertime
+docker inspect --format='{{.State.Health.Status}}' stylora
 ```
 
 ### Resource Usage:
@@ -296,7 +296,7 @@ docker inspect --format='{{.State.Health.Status}}' barbertime
 docker stats
 
 # عرض استخدام موارد container معين
-docker stats barbertime
+docker stats stylora
 ```
 
 ---
@@ -313,10 +313,10 @@ docker stats barbertime
 
 ```bash
 # Scan image
-docker scan barbertime:latest
+docker scan stylora:latest
 
 # أو استخدم Trivy
-trivy image barbertime:latest
+trivy image stylora:latest
 ```
 
 ---

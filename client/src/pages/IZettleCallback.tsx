@@ -130,8 +130,8 @@ export default function IZettleCallback() {
 
         <p className="text-sm text-gray-500 mt-6">
           Trenger du hjelp? Kontakt oss på{" "}
-          <a href="mailto:support@barbertime.no" className="text-[#4a90e2] hover:underline">
-            support@barbertime.no
+          <a href="mailto:support@stylora.no" className="text-[#4a90e2] hover:underline">
+            support@stylora.no
           </a>
         </p>
       </Card>

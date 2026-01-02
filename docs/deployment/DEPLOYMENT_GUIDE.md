@@ -1,8 +1,8 @@
-# دليل النشر - BarberTime Deployment Guide
+# دليل النشر - Stylora Deployment Guide
 
 ## 🎉 تم إزالة external dependencies بنجاح!
 
-هذا الدليل يشرح كيفية نشر BarberTime على استضافة خارجية.
+هذا الدليل يشرح كيفية نشر Stylora على استضافة خارجية.
 
 ---
 
@@ -49,11 +49,11 @@
 **2. رفع الكود على GitHub:**
 
 ```bash
-cd /path/to/barbertime-website
+cd /path/to/stylora-website
 git init
 git add .
-git commit -m "Initial commit - BarberTime ready for deployment"
-git remote add origin https://github.com/YOUR_USERNAME/barbertime.git
+git commit -m "Initial commit - Stylora ready for deployment"
+git remote add origin https://github.com/YOUR_USERNAME/stylora.git
 git push -u origin main
 ```
 
@@ -111,8 +111,8 @@ DATABASE_URL=mysql://user:password@host:3306/database_name
 JWT_SECRET=your-super-secret-jwt-key-change-this
 
 # App Configuration
-VITE_APP_ID=barbertime
-VITE_APP_TITLE=BarberTime
+VITE_APP_ID=stylora
+VITE_APP_TITLE=Stylora
 NODE_ENV=production
 PORT=3000
 
@@ -202,10 +202,10 @@ curl -X POST https://your-domain.com/api/auth/login \
 
 ```bash
 # إنشاء bucket جديد
-aws s3 mb s3://your-barbertime-bucket
+aws s3 mb s3://your-stylora-bucket
 
 # إعداد CORS
-aws s3api put-bucket-cors --bucket your-barbertime-bucket --cors-configuration file://cors.json
+aws s3api put-bucket-cors --bucket your-stylora-bucket --cors-configuration file://cors.json
 ```
 
 cors.json:

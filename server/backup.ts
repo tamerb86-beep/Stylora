@@ -68,7 +68,7 @@ async function exportDatabaseToSQL(tenantId: string): Promise<string> {
   const db = await getDb();
   if (!db) throw new Error("Database connection failed");
   
-  let sql = `-- BarberTime Database Backup\n`;
+  let sql = `-- Stylora Database Backup\n`;
   sql += `-- Tenant: ${tenantId}\n`;
   sql += `-- Date: ${new Date().toISOString()}\n\n`;
   sql += `SET FOREIGN_KEY_CHECKS=0;\n\n`;

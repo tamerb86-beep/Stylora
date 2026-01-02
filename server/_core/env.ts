@@ -14,7 +14,7 @@ export const ENV = {
   smtpPort: Number(process.env.SMTP_PORT ?? "587"),
   smtpUser: process.env.SMTP_USER ?? "",
   smtpPass: process.env.SMTP_PASS ?? "",
-  smtpFromEmail: process.env.SMTP_FROM_EMAIL ?? "no-reply@barbertime.app",
+  smtpFromEmail: process.env.SMTP_FROM_EMAIL ?? "no-reply@stylora.app",
   // Vipps payment gateway
   vippsClientId: process.env.VIPPS_CLIENT_ID ?? "",
   vippsClientSecret: process.env.VIPPS_CLIENT_SECRET ?? "",

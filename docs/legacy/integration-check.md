@@ -1,4 +1,4 @@
-# Integration Check Report - BarberTime/Stylora
+# Integration Check Report - Stylora/Stylora
 
 ## Date: December 15, 2024
 
@@ -70,7 +70,7 @@
 
 1. **Push database schema to Railway**:
    ```bash
-   cd C:\Users\tamer\barbertime
+   cd C:\Users\tamer\stylora
    git pull origin main
    railway run pnpm db:push
    ```

@@ -39,7 +39,7 @@ Historical documentation and reports:
 
 | File | Description |
 |------|-------------|
-| `BARBERTIME_SPECIFICATION.md` | Full product specification |
+| `STYLORA_SPECIFICATION.md` | Full product specification |
 | `PROJECT_STATUS.md` | Current project status |
 | `ENV_VARIABLES.md` | Environment variables reference |
 | `MANUS_REMOVAL_COMPLETE.md` | Manus dependency removal documentation |

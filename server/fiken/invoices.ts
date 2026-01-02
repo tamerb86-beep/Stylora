@@ -1,7 +1,7 @@
 /**
  * Fiken Invoice Sync Module
  * 
- * Handles syncing orders/invoices between BarberTime and Fiken
+ * Handles syncing orders/invoices between Stylora and Fiken
  */
 
 import { getDb } from "../db";
@@ -24,7 +24,7 @@ export interface InvoiceSyncResult {
 }
 
 /**
- * Map BarberTime order to Fiken invoice format
+ * Map Stylora order to Fiken invoice format
  */
 export async function mapOrderToFikenInvoice(
   tenantId: string,

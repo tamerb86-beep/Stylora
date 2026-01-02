@@ -261,7 +261,7 @@ export function DomainSettingsTab() {
                   )}
                 </div>
                 <div className="flex items-center px-3 bg-slate-100 rounded-md border text-sm text-muted-foreground">
-                  .barbertime.no
+                  .stylora.no
                 </div>
               </div>
               
@@ -290,7 +290,7 @@ export function DomainSettingsTab() {
             <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
               <p className="text-sm text-muted-foreground mb-1">Forhåndsvisning av ny lenke</p>
               <p className="font-mono text-blue-600 font-semibold">
-                https://{newSubdomain || "subdomene"}.barbertime.no/book
+                https://{newSubdomain || "subdomene"}.stylora.no/book
               </p>
             </div>
 

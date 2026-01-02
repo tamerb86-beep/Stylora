@@ -8,7 +8,7 @@ function createEmployeeContext(): { ctx: TrpcContext } {
   const user: AuthenticatedUser = {
     id: 2, // Employee ID
     openId: "test-employee",
-    email: "employee@barbertime.no",
+    email: "employee@stylora.no",
     name: "Test Employee",
     loginMethod: "email",
     role: "employee",
@@ -37,7 +37,7 @@ function createAdminContext(): { ctx: TrpcContext } {
   const user: AuthenticatedUser = {
     id: 1,
     openId: "test-owner",
-    email: "owner@barbertime.no",
+    email: "owner@stylora.no",
     name: "Test Owner",
     loginMethod: "email",
     role: "owner",

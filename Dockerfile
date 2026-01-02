@@ -1,4 +1,4 @@
-# Multi-stage Dockerfile for BarberTime
+# Multi-stage Dockerfile for Stylora
 # Optimized for production deployment
 
 # Stage 1: Dependencies
@@ -43,16 +43,16 @@ ENV NODE_ENV=production
 
 # Create a non-root user
 RUN addgroup --system --gid 1001 nodejs && \
-    adduser --system --uid 1001 barbertime
+    adduser --system --uid 1001 stylora
 
 # Copy built application
-COPY --from=builder --chown=barbertime:nodejs /app/dist ./dist
-COPY --from=builder --chown=barbertime:nodejs /app/node_modules ./node_modules
-COPY --from=builder --chown=barbertime:nodejs /app/package.json ./package.json
-COPY --from=builder --chown=barbertime:nodejs /app/drizzle ./drizzle
+COPY --from=builder --chown=stylora:nodejs /app/dist ./dist
+COPY --from=builder --chown=stylora:nodejs /app/node_modules ./node_modules
+COPY --from=builder --chown=stylora:nodejs /app/package.json ./package.json
+COPY --from=builder --chown=stylora:nodejs /app/drizzle ./drizzle
 
 # Switch to non-root user
-USER barbertime
+USER stylora
 
 # Expose port
 EXPOSE 3000

@@ -2,7 +2,7 @@
 
 ## Summary
 
-This update introduces a systematic test strategy with centralized test helpers to ensure consistent, maintainable, and reliable tests across the BarberTime codebase.
+This update introduces a systematic test strategy with centralized test helpers to ensure consistent, maintainable, and reliable tests across the Stylora codebase.
 
 ## Key Changes
 
@@ -188,7 +188,7 @@ None - all changes are additive and non-breaking.
 
 ## Conclusion
 
-This testing infrastructure update provides a solid foundation for writing consistent, maintainable tests in BarberTime. The centralized helpers eliminate common setup errors, reduce code duplication, and make it easier for developers to write comprehensive tests.
+This testing infrastructure update provides a solid foundation for writing consistent, maintainable tests in Stylora. The centralized helpers eliminate common setup errors, reduce code duplication, and make it easier for developers to write comprehensive tests.
 
 The investment in proper test infrastructure pays dividends in:
 - Faster development cycles

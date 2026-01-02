@@ -65,7 +65,7 @@ export async function syncPaymentToFiken(
         fikenInvoiceId: invoiceMapping.fikenInvoiceId,
         fikenPaymentId,
         amount: payment.amount,
-        note: "Payment recorded in BarberTime, awaiting bank reconciliation in Fiken",
+        note: "Payment recorded in Stylora, awaiting bank reconciliation in Fiken",
       } as any,
     });
 

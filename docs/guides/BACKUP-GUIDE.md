@@ -47,12 +47,12 @@
 
 # إعدادات
 DB_HOST="your-database-host"
-DB_NAME="barbertime"
+DB_NAME="stylora"
 DB_USER="your-username"
 DB_PASS="your-password"
 BACKUP_DIR="/path/to/backups"
 DATE=$(date +%Y%m%d_%H%M%S)
-BACKUP_FILE="$BACKUP_DIR/barbertime_$DATE.sql.gz"
+BACKUP_FILE="$BACKUP_DIR/stylora_$DATE.sql.gz"
 
 # إنشاء مجلد النسخ الاحتياطية
 mkdir -p $BACKUP_DIR
@@ -65,7 +65,7 @@ if [ $? -eq 0 ]; then
     echo "✅ Backup successful: $BACKUP_FILE"
     
     # حذف النسخ الأقدم من 30 يوم
-    find $BACKUP_DIR -name "barbertime_*.sql.gz" -mtime +30 -delete
+    find $BACKUP_DIR -name "stylora_*.sql.gz" -mtime +30 -delete
 else
     echo "❌ Backup failed!"
     exit 1
@@ -185,11 +185,11 @@ echo "✅ Logs backed up: logs_$DATE.tar.gz"
 
 ```bash
 # فك الضغط والاستعادة
-gunzip < barbertime_20240101_030000.sql.gz | mysql -h $DB_HOST -u $DB_USER -p$DB_PASS $DB_NAME
+gunzip < stylora_20240101_030000.sql.gz | mysql -h $DB_HOST -u $DB_USER -p$DB_PASS $DB_NAME
 
 # أو بخطوتين
-gunzip barbertime_20240101_030000.sql.gz
-mysql -h $DB_HOST -u $DB_USER -p$DB_PASS $DB_NAME < barbertime_20240101_030000.sql
+gunzip stylora_20240101_030000.sql.gz
+mysql -h $DB_HOST -u $DB_USER -p$DB_PASS $DB_NAME < stylora_20240101_030000.sql
 ```
 
 **⚠️ تحذير:** الاستعادة تستبدل جميع البيانات الحالية!
@@ -205,23 +205,23 @@ mysql -h $DB_HOST -u $DB_USER -p$DB_PASS $DB_NAME < barbertime_20240101_030000.s
 1. **إنشاء بيئة اختبار:**
    ```bash
    # إنشاء قاعدة بيانات اختبار
-   mysql -u root -p -e "CREATE DATABASE barbertime_test;"
+   mysql -u root -p -e "CREATE DATABASE stylora_test;"
    ```
 
 2. **استعادة النسخة الاحتياطية:**
    ```bash
-   gunzip < latest_backup.sql.gz | mysql -u root -p barbertime_test
+   gunzip < latest_backup.sql.gz | mysql -u root -p stylora_test
    ```
 
 3. **التحقق من البيانات:**
    ```bash
-   mysql -u root -p barbertime_test -e "SELECT COUNT(*) FROM customers;"
-   mysql -u root -p barbertime_test -e "SELECT COUNT(*) FROM appointments;"
+   mysql -u root -p stylora_test -e "SELECT COUNT(*) FROM customers;"
+   mysql -u root -p stylora_test -e "SELECT COUNT(*) FROM appointments;"
    ```
 
 4. **حذف قاعدة الاختبار:**
    ```bash
-   mysql -u root -p -e "DROP DATABASE barbertime_test;"
+   mysql -u root -p -e "DROP DATABASE stylora_test;"
    ```
 
 ---

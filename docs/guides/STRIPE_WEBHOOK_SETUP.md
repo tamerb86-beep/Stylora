@@ -83,7 +83,7 @@ https://your-domain.com/api/stripe/webhook
 
 **Description:** (Optional)
 ```
-BarberTime appointment payment confirmation
+Stylora appointment payment confirmation
 ```
 
 ### Step 3: Get Webhook Secret

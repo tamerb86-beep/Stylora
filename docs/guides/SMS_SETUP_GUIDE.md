@@ -1,8 +1,8 @@
-# دليل إعداد نظام SMS في BarberTime
+# دليل إعداد نظام SMS في Stylora
 
 ## الملخص التنفيذي
 
-نظام SMS في BarberTime **مُطبق بالكامل وجاهز للاستخدام**. يدعم النظام **4 مزودي خدمة SMS** مختلفين، بما في ذلك مزودين نرويجيين متخصصين ومزود دولي (Twilio).
+نظام SMS في Stylora **مُطبق بالكامل وجاهز للاستخدام**. يدعم النظام **4 مزودي خدمة SMS** مختلفين، بما في ذلك مزودين نرويجيين متخصصين ومزود دولي (Twilio).
 
 ---
 
@@ -23,7 +23,7 @@ Hei [اسم العميل]! Dette er en påminnelse om din time hos [اسم ال�
 
 **مثال:**
 ```
-Hei Mohammed! Dette er en påminnelse om din time hos BarberTime Oslo 
+Hei Mohammed! Dette er en påminnelse om din time hos Stylora Oslo 
 fredag 6. desember kl. 14:30. Vi gleder oss til å se deg!
 ```
 
@@ -89,7 +89,7 @@ SMS_PROVIDER=mock              # mock | pswincom | linkmobility | twilio
 # بيانات الاعتماد (حسب المزود)
 SMS_API_KEY=your_api_key       # مطلوب لجميع المزودين
 SMS_API_SECRET=your_secret     # مطلوب لـ PSWinCom و Twilio
-SMS_SENDER_ID=BarberTime       # اسم المرسل (اختياري)
+SMS_SENDER_ID=Stylora       # اسم المرسل (اختياري)
 ```
 
 ---
@@ -109,7 +109,7 @@ SMS_SENDER_ID=BarberTime       # اسم المرسل (اختياري)
 1. الذهاب إلى **Settings** → **API Settings**
 2. نسخ **Username** (سيكون SMS_API_KEY)
 3. نسخ **Password** (سيكون SMS_API_SECRET)
-4. (اختياري) تعيين **Sender ID** مخصص (مثل "BarberTime")
+4. (اختياري) تعيين **Sender ID** مخصص (مثل "Stylora")
 
 #### الخطوة 3: تكوين المتغيرات البيئية
 
@@ -117,13 +117,13 @@ SMS_SENDER_ID=BarberTime       # اسم المرسل (اختياري)
 SMS_PROVIDER=pswincom
 SMS_API_KEY=your_pswincom_username
 SMS_API_SECRET=your_pswincom_password
-SMS_SENDER_ID=BarberTime
+SMS_SENDER_ID=Stylora
 ```
 
 #### الخطوة 4: إعادة تشغيل الخادم
 
 ```bash
-cd /home/ubuntu/barbertime
+cd /home/ubuntu/stylora
 # سيتم إعادة التشغيل تلقائياً عند حفظ المتغيرات البيئية
 ```
 
@@ -170,7 +170,7 @@ SMS_SENDER_ID=+4712345678  # رقم Twilio الخاص بك
 #### الخطوة 5: إعادة تشغيل الخادم
 
 ```bash
-cd /home/ubuntu/barbertime
+cd /home/ubuntu/stylora
 # سيتم إعادة التشغيل تلقائياً
 ```
 
@@ -205,7 +205,7 @@ cd /home/ubuntu/barbertime
 SMS_PROVIDER=linkmobility
 SMS_API_KEY=your_api_key
 SMS_API_SECRET=your_platform_partner_id
-SMS_SENDER_ID=BarberTime
+SMS_SENDER_ID=Stylora
 ```
 
 ---
@@ -349,7 +349,7 @@ SMS_PROVIDER=mock
 # تحقق من سجلات الخادم:
 # 📱 [MOCK SMS]
 #    To: +4712345678
-#    From: BarberTime
+#    From: Stylora
 #    Message: Hei Mohammed! Dette er...
 #    Status: ✅ Sent (mock)
 ```
@@ -495,7 +495,7 @@ const reminderEnd = new Date(now.getTime() + 49 * 60 * 60 * 1000);
 
 ## الخلاصة
 
-نظام SMS في BarberTime **مُطبق بالكامل ومُختبر جيداً**. يدعم 4 مزودي خدمة مختلفين ويرسل تذكيرات تلقائية احترافية بالنرويجية. كل ما يحتاجه هو:
+نظام SMS في Stylora **مُطبق بالكامل ومُختبر جيداً**. يدعم 4 مزودي خدمة مختلفين ويرسل تذكيرات تلقائية احترافية بالنرويجية. كل ما يحتاجه هو:
 
 1. **اختيار مزود SMS** (PSWinCom موصى به للنرويج، Twilio للاختبار السريع)
 2. **تكوين المتغيرات البيئية** (SMS_PROVIDER, SMS_API_KEY, SMS_API_SECRET)

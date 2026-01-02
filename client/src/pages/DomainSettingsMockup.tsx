@@ -26,7 +26,7 @@ export default function DomainSettingsMockup() {
   const [checking, setChecking] = useState(false);
   const [available, setAvailable] = useState<boolean | null>(null);
 
-  const bookingUrl = `https://${subdomain}.barbertime.no/book`;
+  const bookingUrl = `https://${subdomain}.stylora.no/book`;
 
   const handleCopy = () => {
     navigator.clipboard.writeText(bookingUrl);
@@ -214,7 +214,7 @@ export default function DomainSettingsMockup() {
                     )}
                   </div>
                   <div className="flex items-center px-3 bg-slate-100 rounded-md border text-sm text-muted-foreground">
-                    .barbertime.no
+                    .stylora.no
                   </div>
                 </div>
                 
@@ -243,7 +243,7 @@ export default function DomainSettingsMockup() {
               <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
                 <p className="text-sm text-muted-foreground mb-1">معاينة الرابط الجديد</p>
                 <p className="font-mono text-blue-600 font-semibold">
-                  https://{newSubdomain || "subdomain"}.barbertime.no/book
+                  https://{newSubdomain || "subdomain"}.stylora.no/book
                 </p>
               </div>
 

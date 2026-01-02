@@ -23,7 +23,7 @@ export default function LoyaltyCustomer() {
   const [selectedReward, setSelectedReward] = useState<any>(null);
 
   // Get tenant ID from URL or context
-  const tenantId = new URLSearchParams(window.location.search).get("tenantId") || "demo-tenant-barbertime";
+  const tenantId = new URLSearchParams(window.location.search).get("tenantId") || "demo-tenant-stylora";
 
   // Fetch customer points
   const { data: pointsData, isLoading: pointsLoading, refetch: refetchPoints } = trpc.loyalty.getCustomerPoints.useQuery({

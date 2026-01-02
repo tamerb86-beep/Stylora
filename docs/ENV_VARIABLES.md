@@ -1,6 +1,6 @@
 # Environment Variables Reference
 
-This document lists all environment variables needed for the BarberTime application.
+This document lists all environment variables needed for the Stylora application.
 
 ## Already Configured (via Stylora)
 
@@ -45,7 +45,7 @@ VITE_SENTRY_TRACES_SAMPLE_RATE=0.1
 ```bash
 BACKUP_S3_ENDPOINT=https://s3.us-west-000.backblazeb2.com
 BACKUP_S3_REGION=us-west-000
-BACKUP_S3_BUCKET=barbertime-backups
+BACKUP_S3_BUCKET=stylora-backups
 BACKUP_S3_ACCESS_KEY=your-key-id
 BACKUP_S3_SECRET_KEY=your-secret-key
 BACKUP_RETENTION_DAYS=30

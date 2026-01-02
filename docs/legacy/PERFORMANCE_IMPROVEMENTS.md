@@ -2,7 +2,7 @@
 ## Stylora Landing Page Enhancements
 
 **Date:** December 28, 2025  
-**Project:** BarberTime Website (Stylora)
+**Project:** Stylora Website (Stylora)
 
 ---
 

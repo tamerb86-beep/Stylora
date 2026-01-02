@@ -73,10 +73,10 @@ export function initSentry() {
     ],
     
     // Release tracking
-    release: process.env.SENTRY_RELEASE || `barbertime@${process.env.npm_package_version}`,
+    release: process.env.SENTRY_RELEASE || `stylora@${process.env.npm_package_version}`,
     
     // Server name
-    serverName: process.env.RAILWAY_SERVICE_NAME || "barbertime-backend",
+    serverName: process.env.RAILWAY_SERVICE_NAME || "stylora-backend",
   });
 
   console.log(`✅ Sentry initialized for ${environment} environment`);

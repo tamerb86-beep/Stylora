@@ -42,7 +42,7 @@ async function generateFinancialPDF(data: {
 </head>
 <body>
   <div class="header">
-    <h1>${data.salonName || "BarberTime"}</h1>
+    <h1>${data.salonName || "Stylora"}</h1>
     <p>Finansiell rapport</p>
   </div>
   
@@ -208,7 +208,7 @@ export const exportRouter = router({
           profitMargin,
         },
         expensesByCategory,
-        salonName: "BarberTime", // TODO: Get from tenant settings
+        salonName: "Stylora", // TODO: Get from tenant settings
       });
 
       return { html };

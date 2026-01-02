@@ -242,7 +242,7 @@ describe("Unimicro Integration", () => {
   });
 
   describe("Customer Mapping", () => {
-    it("should map BarberTime customer to Unimicro customer", () => {
+    it("should map Stylora customer to Unimicro customer", () => {
       const testCustomer = {
         firstName: "Mohammed",
         lastName: "Ahmed",

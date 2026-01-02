@@ -1,6 +1,6 @@
 # Test Helpers Quick Reference
 
-This is a quick reference guide for using the centralized test helpers in BarberTime. For the complete testing strategy, see [TESTING_STRATEGY.md](../TESTING_STRATEGY.md).
+This is a quick reference guide for using the centralized test helpers in Stylora. For the complete testing strategy, see [TESTING_STRATEGY.md](../TESTING_STRATEGY.md).
 
 ## Quick Start
 

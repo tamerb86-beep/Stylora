@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Seed Demo Account for BarberTime
+ * Seed Demo Account for Stylora
  * Creates a demo tenant with sample data for users to explore
  */
 
@@ -13,9 +13,9 @@ const connection = await mysql.createConnection(process.env.DATABASE_URL);
 console.log('🚀 Starting demo account seed...\n');
 
 // Demo tenant ID
-const DEMO_TENANT_ID = 'demo-tenant-barbertime';
-const DEMO_USER_EMAIL = 'demo@barbertime.no';
-const DEMO_OPEN_ID = 'demo-owner-barbertime-001';
+const DEMO_TENANT_ID = 'demo-tenant-stylora';
+const DEMO_USER_EMAIL = 'demo@stylora.no';
+const DEMO_OPEN_ID = 'demo-owner-stylora-001';
 
 try {
   // 1. Check/Create Demo Tenant
@@ -36,7 +36,7 @@ try {
     `, [
       DEMO_TENANT_ID,
       'Demo Barbershop',
-      'demo-barbertime',
+      'demo-stylora',
       '123456789',
       '+47 12 34 56 78',
       DEMO_USER_EMAIL,
@@ -96,8 +96,8 @@ try {
   console.log('\n👥 Creating sample employees...');
   
   const employees = [
-    { name: 'Lars Olsen', phone: '+47 98 76 54 32', email: 'lars@demo.barbertime.no', commissionRate: '45.00' },
-    { name: 'Kari Hansen', phone: '+47 98 76 54 33', email: 'kari@demo.barbertime.no', commissionRate: '40.00' },
+    { name: 'Lars Olsen', phone: '+47 98 76 54 32', email: 'lars@demo.stylora.no', commissionRate: '45.00' },
+    { name: 'Kari Hansen', phone: '+47 98 76 54 33', email: 'kari@demo.stylora.no', commissionRate: '40.00' },
   ];
 
   const employeeIds = [];

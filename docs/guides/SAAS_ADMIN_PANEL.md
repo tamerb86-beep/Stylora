@@ -2,7 +2,7 @@
 
 ## Overview
 
-The SaaS Admin Panel is a platform-level administration interface that allows the **platform owner** to manage all tenants (salons) in the BarberTime multi-tenant SaaS application. This is a "meta" dashboard that sits above individual salon dashboards.
+The SaaS Admin Panel is a platform-level administration interface that allows the **platform owner** to manage all tenants (salons) in the Stylora multi-tenant SaaS application. This is a "meta" dashboard that sits above individual salon dashboards.
 
 ## Key Features
 
@@ -205,7 +205,7 @@ While routes are not explicitly protected on the frontend, all backend procedure
 ## Usage in Production
 
 ### Accessing the Panel
-1. Log in to BarberTime as the platform owner
+1. Log in to Stylora as the platform owner
 2. Navigate to `/saas-admin`
 3. You'll see the platform overview dashboard
 

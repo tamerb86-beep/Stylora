@@ -1270,7 +1270,7 @@ export const appRouter = router({
 
       return {
         subdomain: tenant.subdomain,
-        bookingUrl: `https://${tenant.subdomain}.barbertime.no/book`,
+        bookingUrl: `https://${tenant.subdomain}.stylora.no/book`,
         lastUpdated: tenant.updatedAt,
       };
     }),
@@ -1349,7 +1349,7 @@ export const appRouter = router({
         return {
           success: true,
           subdomain: input.subdomain,
-          bookingUrl: `https://${input.subdomain}.barbertime.no/book`,
+          bookingUrl: `https://${input.subdomain}.stylora.no/book`,
         };
       }),
 
@@ -1771,7 +1771,7 @@ export const appRouter = router({
 
         const result = await sendSMS({
           to: input.phoneNumber,
-          message: "Dette er en test-SMS fra BarberTime. Hvis du mottar denne meldingen, er SMS-innstillingene dine konfigurert riktig!",
+          message: "Dette er en test-SMS fra Stylora. Hvis du mottar denne meldingen, er SMS-innstillingene dine konfigurert riktig!",
           tenantId: ctx.tenantId,
         });
 

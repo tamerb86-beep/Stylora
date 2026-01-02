@@ -1,7 +1,7 @@
-# Payment Pages Structure - BarberTime
+# Payment Pages Structure - Stylora
 
 ## Overview
-BarberTime has **4 different payment-related pages**, each serving a distinct purpose. There are **NO duplicate pages**.
+Stylora has **4 different payment-related pages**, each serving a distinct purpose. There are **NO duplicate pages**.
 
 ## Page Breakdown
 

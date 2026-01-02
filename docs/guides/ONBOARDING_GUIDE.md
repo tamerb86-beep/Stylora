@@ -2,7 +2,7 @@
 
 ## Overview
 
-The BarberTime onboarding system provides a comprehensive, step-by-step wizard for new salon owners to register and set up their accounts. The system includes automated tenant creation, welcome emails, and QR code generation for employees.
+The Stylora onboarding system provides a comprehensive, step-by-step wizard for new salon owners to register and set up their accounts. The system includes automated tenant creation, welcome emails, and QR code generation for employees.
 
 ---
 
@@ -194,7 +194,7 @@ SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
 SMTP_USER=your-email@gmail.com
 SMTP_PASSWORD=your-app-password
-SMTP_FROM=noreply@barbertime.no
+SMTP_FROM=noreply@stylora.no
 ```
 
 ### Gmail Setup (Recommended)
@@ -438,9 +438,9 @@ describe("Onboarding API", () => {
 
 For questions or issues with the onboarding system:
 
-- **Email:** support@barbertime.no
-- **Documentation:** https://docs.barbertime.no
-- **GitHub Issues:** https://github.com/barbertime/barbertime/issues
+- **Email:** support@stylora.no
+- **Documentation:** https://docs.stylora.no
+- **GitHub Issues:** https://github.com/stylora/stylora/issues
 
 ---
 

@@ -18,7 +18,7 @@ function createTransporter() {
   const smtpPort = parseInt(process.env.SMTP_PORT || "587", 10);
   const smtpUser = process.env.SMTP_USER;
   const smtpPassword = process.env.SMTP_PASSWORD;
-  const smtpFrom = process.env.SMTP_FROM || "noreply@barbertime.no";
+  const smtpFrom = process.env.SMTP_FROM || "noreply@stylora.no";
 
   if (!smtpUser || !smtpPassword) {
     console.warn("⚠️ SMTP credentials not configured. Email sending disabled.");
@@ -46,7 +46,7 @@ function generateWelcomeEmailHTML(data: WelcomeEmailData): string {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>مرحباً في BarberTime</title>
+  <title>مرحباً في Stylora</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -203,7 +203,7 @@ function generateWelcomeEmailHTML(data: WelcomeEmailData): string {
 <body>
   <div class="container">
     <div class="header">
-      <h1>🎉 مرحباً في BarberTime</h1>
+      <h1>🎉 مرحباً في Stylora</h1>
       <p>نظام إدارة الصالونات الأكثر تطوراً</p>
       <div class="trial-badge">✨ تجربة مجانية لمدة ${data.trialDays} يوم</div>
     </div>
@@ -214,7 +214,7 @@ function generateWelcomeEmailHTML(data: WelcomeEmailData): string {
       </div>
 
       <div class="message">
-        نحن سعداء جداً بانضمامك إلى عائلة BarberTime! تم إنشاء حساب <strong>${data.salonName}</strong> بنجاح وأنت الآن جاهز لبدء رحلتك في إدارة صالونك بشكل احترافي.
+        نحن سعداء جداً بانضمامك إلى عائلة Stylora! تم إنشاء حساب <strong>${data.salonName}</strong> بنجاح وأنت الآن جاهز لبدء رحلتك في إدارة صالونك بشكل احترافي.
       </div>
 
       <div class="info-box">
@@ -229,7 +229,7 @@ function generateWelcomeEmailHTML(data: WelcomeEmailData): string {
           <strong>البريد الإلكتروني:</strong> ${data.ownerEmail}
         </div>
         <div class="info-item">
-          <strong>النطاق الفرعي:</strong> ${data.subdomain}.barbertime.no
+          <strong>النطاق الفرعي:</strong> ${data.subdomain}.stylora.no
         </div>
       </div>
 
@@ -281,14 +281,14 @@ function generateWelcomeEmailHTML(data: WelcomeEmailData): string {
     <div class="footer">
       <p>
         هل لديك أسئلة؟ تواصل معنا على 
-        <a href="mailto:support@barbertime.no">support@barbertime.no</a>
+        <a href="mailto:support@stylora.no">support@stylora.no</a>
       </p>
       <p style="margin-top: 20px; font-size: 12px; color: #999;">
-        © ${new Date().getFullYear()} BarberTime. جميع الحقوق محفوظة.
+        © ${new Date().getFullYear()} Stylora. جميع الحقوق محفوظة.
       </p>
       <p style="margin-top: 10px; font-size: 12px;">
-        <a href="https://barbertime.no/terms">الشروط والأحكام</a> | 
-        <a href="https://barbertime.no/privacy">سياسة الخصوصية</a>
+        <a href="https://stylora.no/terms">الشروط والأحكام</a> | 
+        <a href="https://stylora.no/privacy">سياسة الخصوصية</a>
       </p>
     </div>
   </div>
@@ -312,9 +312,9 @@ export async function sendWelcomeEmail(data: WelcomeEmailData): Promise<boolean>
     const htmlContent = generateWelcomeEmailHTML(data);
 
     await transporter.sendMail({
-      from: process.env.SMTP_FROM || "BarberTime <noreply@barbertime.no>",
+      from: process.env.SMTP_FROM || "Stylora <noreply@stylora.no>",
       to: data.ownerEmail,
-      subject: `مرحباً في BarberTime - ${data.salonName}`,
+      subject: `مرحباً في Stylora - ${data.salonName}`,
       html: htmlContent,
     });
 
@@ -370,7 +370,7 @@ export async function sendOnboardingReminderEmail(
   <div class="container">
     <h2>مرحباً ${ownerName}!</h2>
     <p>لاحظنا أنك لم تكمل إعداد حساب <strong>${salonName}</strong> بعد.</p>
-    <p>أكمل الإعداد الآن واستفد من جميع ميزات BarberTime:</p>
+    <p>أكمل الإعداد الآن واستفد من جميع ميزات Stylora:</p>
     <ul>
       <li>إدارة المواعيد والحجوزات</li>
       <li>قاعدة بيانات العملاء</li>
@@ -385,9 +385,9 @@ export async function sendOnboardingReminderEmail(
     `;
 
     await transporter.sendMail({
-      from: process.env.SMTP_FROM || "BarberTime <noreply@barbertime.no>",
+      from: process.env.SMTP_FROM || "Stylora <noreply@stylora.no>",
       to: ownerEmail,
-      subject: `أكمل إعداد ${salonName} - BarberTime`,
+      subject: `أكمل إعداد ${salonName} - Stylora`,
       html: htmlContent,
     });
 

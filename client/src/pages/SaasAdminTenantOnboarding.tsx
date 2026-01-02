@@ -372,7 +372,7 @@ export default function SaasAdminTenantOnboarding() {
             placeholder="salong-elegant"
           />
           <p className="text-sm text-muted-foreground mt-1">
-            Din salong vil være tilgjengelig på: <strong>{formData.subdomain || "subdomain"}.barbertime.no</strong>
+            Din salong vil være tilgjengelig på: <strong>{formData.subdomain || "subdomain"}.stylora.no</strong>
           </p>
           {checkSubdomainMutation.data && formData.subdomain.length >= 3 && (
             <p className={`text-sm mt-1 ${checkSubdomainMutation.data.available ? "text-green-600" : "text-red-600"}`}>
@@ -714,7 +714,7 @@ export default function SaasAdminTenantOnboarding() {
             </div>
             <div>
               <p className="text-sm font-medium text-muted-foreground">URL</p>
-              <p className="font-semibold">{createdTenant.subdomain}.barbertime.no</p>
+              <p className="font-semibold">{createdTenant.subdomain}.stylora.no</p>
             </div>
             <div>
               <p className="text-sm font-medium text-muted-foreground">Admin e-post</p>

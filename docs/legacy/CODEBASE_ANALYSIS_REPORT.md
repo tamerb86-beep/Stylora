@@ -1,4 +1,4 @@
-# BarberTime Codebase Analysis Report
+# Stylora Codebase Analysis Report
 ## Payments / Billing / Stripe / POS / Appointments / Multi-Tenant
 
 **Date:** November 29, 2025  
@@ -9,7 +9,7 @@
 
 ## Executive Summary
 
-The BarberTime codebase has **comprehensive database schemas** for payments, appointments, and multi-tenant isolation, but **NO payment processing logic** has been implemented yet. The database is ready, but all Stripe integration, POS functionality, and payment workflows need to be built from scratch.
+The Stylora codebase has **comprehensive database schemas** for payments, appointments, and multi-tenant isolation, but **NO payment processing logic** has been implemented yet. The database is ready, but all Stripe integration, POS functionality, and payment workflows need to be built from scratch.
 
 **Key Findings:**
 - ✅ Database schemas are complete and well-designed
@@ -26,7 +26,7 @@ The BarberTime codebase has **comprehensive database schemas** for payments, app
 
 ### 1.1 Payments Table
 
-**File:** `/home/ubuntu/barbertime/drizzle/schema.ts` (lines 265-288)
+**File:** `/home/ubuntu/stylora/drizzle/schema.ts` (lines 265-288)
 
 **Schema:**
 ```typescript
@@ -79,7 +79,7 @@ export const payments = mysqlTable("payments", {
 
 ### 1.2 Orders Table
 
-**File:** `/home/ubuntu/barbertime/drizzle/schema.ts` (lines 229-259)
+**File:** `/home/ubuntu/stylora/drizzle/schema.ts` (lines 229-259)
 
 **Schema:**
 ```typescript
@@ -127,7 +127,7 @@ export const orderItems = mysqlTable("orderItems", {
 
 ### 1.3 Appointments Table
 
-**File:** `/home/ubuntu/barbertime/drizzle/schema.ts` (lines 137-186)
+**File:** `/home/ubuntu/stylora/drizzle/schema.ts` (lines 137-186)
 
 **Schema:**
 ```typescript
@@ -178,7 +178,7 @@ export const recurrenceRules = mysqlTable("recurrenceRules", {
 
 ### 1.4 Subscription & Billing Tables
 
-**File:** `/home/ubuntu/barbertime/drizzle/schema.ts` (lines 378-404)
+**File:** `/home/ubuntu/stylora/drizzle/schema.ts` (lines 378-404)
 
 **Schema:**
 ```typescript
@@ -217,7 +217,7 @@ export const tenantSubscriptions = mysqlTable("tenantSubscriptions", {
 
 ### 1.5 Multi-Tenant Tables
 
-**File:** `/home/ubuntu/barbertime/drizzle/schema.ts` (lines 27-69)
+**File:** `/home/ubuntu/stylora/drizzle/schema.ts` (lines 27-69)
 
 **Schema:**
 ```typescript
@@ -264,7 +264,7 @@ export const users = mysqlTable("users", {
 
 ### 2.1 Appointments Router
 
-**File:** `/home/ubuntu/barbertime/server/routers.ts` (lines 242-418)
+**File:** `/home/ubuntu/stylora/server/routers.ts` (lines 242-418)
 
 **Procedures:**
 
@@ -310,7 +310,7 @@ appointments.list: tenantProcedure
 
 ### 2.2 Public Booking Router
 
-**File:** `/home/ubuntu/barbertime/server/routers.ts` (lines 1329-1610)
+**File:** `/home/ubuntu/stylora/server/routers.ts` (lines 1329-1610)
 
 **Procedures:**
 
@@ -362,7 +362,7 @@ appointments.list: tenantProcedure
 
 ### 2.4 Existing Routers Summary
 
-**File:** `/home/ubuntu/barbertime/server/routers.ts` (1983 lines)
+**File:** `/home/ubuntu/stylora/server/routers.ts` (1983 lines)
 
 **All Routers:**
 
@@ -403,7 +403,7 @@ appointments.list: tenantProcedure
 
 **Environment Variables:**
 
-**File:** `/home/ubuntu/barbertime/server/_core/env.ts`
+**File:** `/home/ubuntu/stylora/server/_core/env.ts`
 
 ```typescript
 export const ENV = {
@@ -481,7 +481,7 @@ export const ENV = {
 
 **Middleware Pattern:**
 
-**File:** `/home/ubuntu/barbertime/server/routers.ts` (lines 17-27)
+**File:** `/home/ubuntu/stylora/server/routers.ts` (lines 17-27)
 
 ```typescript
 // Middleware to ensure user has tenant access
@@ -509,7 +509,7 @@ customers.list: tenantProcedure.query(async ({ ctx }) => {
 
 **Database Helper Pattern:**
 
-**File:** `/home/ubuntu/barbertime/server/db.ts`
+**File:** `/home/ubuntu/stylora/server/db.ts`
 
 ```typescript
 export async function getCustomersByTenant(tenantId: string) {
@@ -602,7 +602,7 @@ const employeeProcedure = tenantProcedure.use(({ ctx, next }) => {
 
 ## 5. Database Helper Functions
 
-**File:** `/home/ubuntu/barbertime/server/db.ts`
+**File:** `/home/ubuntu/stylora/server/db.ts`
 
 **Existing Functions:**
 

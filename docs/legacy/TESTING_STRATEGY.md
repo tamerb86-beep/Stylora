@@ -1,11 +1,11 @@
-# BarberTime Testing Strategy
+# Stylora Testing Strategy
 
 **Author:** Stylora Team  
 **Last Updated:** December 10, 2024
 
 ## Overview
 
-This document outlines the systematic testing strategy for BarberTime, a multi-tenant SaaS application. The strategy emphasizes consistency, maintainability, and reliability through centralized test helpers and standardized patterns.
+This document outlines the systematic testing strategy for Stylora, a multi-tenant SaaS application. The strategy emphasizes consistency, maintainability, and reliability through centralized test helpers and standardized patterns.
 
 ## Core Principles
 
@@ -619,6 +619,6 @@ When adding new helper functions:
 
 ## Conclusion
 
-By following this systematic testing strategy, we ensure that BarberTime maintains high code quality, reliable test coverage, and a consistent development experience. The centralized test helpers eliminate common setup errors, reduce code duplication, and make it easier for developers to write comprehensive tests.
+By following this systematic testing strategy, we ensure that Stylora maintains high code quality, reliable test coverage, and a consistent development experience. The centralized test helpers eliminate common setup errors, reduce code duplication, and make it easier for developers to write comprehensive tests.
 
 Remember: **Good tests are an investment in the long-term maintainability and reliability of the application.** Taking the time to write clear, well-structured tests pays dividends when debugging issues, refactoring code, or onboarding new team members.

@@ -1,4 +1,4 @@
-# تقرير فحص كود BarberTime - Code Audit Report
+# تقرير فحص كود Stylora - Code Audit Report
 
 ## 📊 ملخص عام - Executive Summary
 

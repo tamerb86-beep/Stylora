@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document describes the Stripe Checkout integration for appointment prepayment in the BarberTime system. The implementation allows tenants to collect payment for appointments before the service is delivered.
+This document describes the Stripe Checkout integration for appointment prepayment in the Stylora system. The implementation allows tenants to collect payment for appointments before the service is delivered.
 
 ---
 
