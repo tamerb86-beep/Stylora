@@ -1,6 +1,6 @@
 /**
  * Unimicro Invoice Sync
- * Handles syncing orders/invoices between BarberTime and Unimicro
+ * Handles syncing orders/invoices between Stylora and Unimicro
  */
 
 import { getDb } from "../db";
@@ -130,7 +130,7 @@ async function getOrderWithDetails(tenantId: string, orderId: number) {
 }
 
 /**
- * Map BarberTime order to Unimicro Invoice format
+ * Map Stylora order to Unimicro Invoice format
  */
 async function mapOrderToUnimicroInvoice(
   tenantId: string,

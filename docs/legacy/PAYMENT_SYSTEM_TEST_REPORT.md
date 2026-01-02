@@ -1,4 +1,4 @@
-# تقرير اختبار نظام الدفع الكامل - BarberTime SaaS
+# تقرير اختبار نظام الدفع الكامل - Stylora SaaS
 ## Payment System Complete Testing Report
 
 **تاريخ الاختبار:** 8 ديسمبر 2025  

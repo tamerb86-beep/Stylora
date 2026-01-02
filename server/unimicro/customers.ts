@@ -1,6 +1,6 @@
 /**
  * Unimicro Customer Sync
- * Handles syncing customers between BarberTime and Unimicro
+ * Handles syncing customers between Stylora and Unimicro
  */
 
 import { getDb } from "../db";
@@ -31,7 +31,7 @@ export interface UnimicroCustomer {
 }
 
 /**
- * Map BarberTime customer to Unimicro Customer format
+ * Map Stylora customer to Unimicro Customer format
  */
 function mapCustomerToUnimicro(customer: Customer): UnimicroCustomer {
   const fullName = `${customer.firstName}${customer.lastName ? ' ' + customer.lastName : ''}`.trim();
@@ -82,7 +82,7 @@ export async function syncCustomerToUnimicro(
   if (!db) throw new Error("Database not available");
   
   try {
-    // Get customer from BarberTime
+    // Get customer from Stylora
     const [customer] = await db
       .select()
       .from(customers)

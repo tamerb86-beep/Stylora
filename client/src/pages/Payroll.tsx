@@ -321,7 +321,7 @@ export default function Payroll() {
         <div class="payslip">
           <div class="header">
             <div class="company-info">
-              <h1>BarberTime</h1>
+              <h1>Stylora</h1>
               <p>Profesjonell Salongstyring</p>
             </div>
             <div class="payslip-title">
@@ -460,7 +460,7 @@ export default function Payroll() {
           </div>
           
           <div class="footer">
-            <p>Dette dokumentet er automatisk generert av BarberTime lønnssystem.</p>
+            <p>Dette dokumentet er automatisk generert av Stylora lønnssystem.</p>
             <p>Generert: ${new Date().toLocaleDateString("nb-NO")} kl. ${new Date().toLocaleTimeString("nb-NO")}</p>
           </div>
         </div>

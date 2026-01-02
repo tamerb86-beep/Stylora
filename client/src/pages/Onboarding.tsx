@@ -371,7 +371,7 @@ export default function Onboarding() {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-orange-500 bg-clip-text text-transparent mb-2">
-            مرحباً في BarberTime
+            مرحباً في Stylora
           </h1>
           <p className="text-gray-600">دعنا نساعدك في إعداد صالونك في دقائق</p>
         </div>
@@ -452,7 +452,7 @@ export default function Onboarding() {
                       placeholder="royal-salon"
                       className="flex-1"
                     />
-                    <span className="text-sm text-gray-500">.barbertime.no</span>
+                    <span className="text-sm text-gray-500">.stylora.no</span>
                   </div>
                   {salonInfoForm.formState.errors.subdomain && (
                     <p className="text-sm text-red-500 mt-1">
@@ -460,7 +460,7 @@ export default function Onboarding() {
                     </p>
                   )}
                   <p className="text-xs text-gray-500 mt-1">
-                    سيكون رابط صالونك: royal-salon.barbertime.no
+                    سيكون رابط صالونك: royal-salon.stylora.no
                   </p>
                 </div>
 
@@ -1055,7 +1055,7 @@ export default function Onboarding() {
                   </div>
                   <div className="space-y-2 text-sm">
                     <p><strong>الاسم:</strong> {onboardingData.salonInfo?.salonName}</p>
-                    <p><strong>النطاق:</strong> {onboardingData.salonInfo?.subdomain}.barbertime.no</p>
+                    <p><strong>النطاق:</strong> {onboardingData.salonInfo?.subdomain}.stylora.no</p>
                     <p><strong>العنوان:</strong> {onboardingData.salonInfo?.address}, {onboardingData.salonInfo?.city}</p>
                     <p><strong>الهاتف:</strong> {onboardingData.salonInfo?.phone}</p>
                     <p><strong>البريد:</strong> {onboardingData.salonInfo?.email}</p>

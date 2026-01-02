@@ -1,12 +1,12 @@
 # Cancellation & No-Show Policy System
 
-Complete guide for configuring and using the cancellation and no-show policy system in BarberTime.
+Complete guide for configuring and using the cancellation and no-show policy system in Stylora.
 
 ---
 
 ## Overview
 
-BarberTime now includes a configurable cancellation and no-show policy system that helps salons:
+Stylora now includes a configurable cancellation and no-show policy system that helps salons:
 
 1. **Track late cancellations** - Identify when customers cancel inside the cancellation window
 2. **Monitor no-show patterns** - Count how many times a customer has failed to show up

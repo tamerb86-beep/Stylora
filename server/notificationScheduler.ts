@@ -94,7 +94,7 @@ export async function processAppointmentReminders(): Promise<{
         .where(eq(tenants.id, appointment.tenantId))
         .limit(1);
 
-      const salonName = tenant[0]?.name || "BarberTime";
+      const salonName = tenant[0]?.name || "Stylora";
 
       // Format reminder message
       const message = formatAppointmentReminder({

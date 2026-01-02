@@ -6,7 +6,7 @@ Script to add i18n translations to WalkInQueue.tsx component
 import re
 
 # Read the original file
-with open('/home/ubuntu/barbertime-website/client/src/components/WalkInQueue.tsx', 'r', encoding='utf-8') as f:
+with open('/home/ubuntu/stylora-website/client/src/components/WalkInQueue.tsx', 'r', encoding='utf-8') as f:
     content = f.read()
 
 # Add useTranslation import
@@ -155,7 +155,7 @@ for key, value in missing_keys.items():
     print(f'  "{key}": "{value}",')
 
 # Write the updated content
-with open('/home/ubuntu/barbertime-website/client/src/components/WalkInQueue.tsx', 'w', encoding='utf-8') as f:
+with open('/home/ubuntu/stylora-website/client/src/components/WalkInQueue.tsx', 'w', encoding='utf-8') as f:
     f.write(content)
 
 print("\n✅ WalkInQueue.tsx has been updated with i18n translations!")

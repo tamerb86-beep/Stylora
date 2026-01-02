@@ -1,6 +1,6 @@
 # DevOps Infrastructure Setup Guide
 
-This document provides comprehensive instructions for setting up and managing the production DevOps infrastructure for BarberTime.
+This document provides comprehensive instructions for setting up and managing the production DevOps infrastructure for Stylora.
 
 ## Table of Contents
 
@@ -72,7 +72,7 @@ Memory Limit: 4GB for TypeScript
    - Go to GitHub repository → Settings → Secrets and variables → Actions
    - Add the following secrets:
      - `RAILWAY_TOKEN`: Your Railway API token
-     - `RAILWAY_SERVICE_NAME`: Your service name (e.g., "barbertime-production")
+     - `RAILWAY_SERVICE_NAME`: Your service name (e.g., "stylora-production")
      - `CODECOV_TOKEN` (optional): For code coverage
 
 3. **Test the Pipeline:**
@@ -111,7 +111,7 @@ SENTRY_DSN=https://your-dsn@sentry.io/project-id
 NODE_ENV=production
 SENTRY_TRACES_SAMPLE_RATE=0.1  # 10% of transactions
 SENTRY_PROFILES_SAMPLE_RATE=0.1  # 10% profiling
-SENTRY_RELEASE=barbertime@1.0.0  # Optional
+SENTRY_RELEASE=stylora@1.0.0  # Optional
 ```
 
 ### Frontend Setup
@@ -226,14 +226,14 @@ Automated daily backups to S3-compatible storage (Backblaze B2, AWS S3, etc.) wi
 2. **Create Bucket:**
    - Go to B2 Cloud Storage → Buckets
    - Click "Create a Bucket"
-   - Name: `barbertime-backups`
+   - Name: `stylora-backups`
    - Files in Bucket: Private
    - Object Lock: Disabled
 
 3. **Create Application Key:**
    - Go to App Keys → Add a New Application Key
-   - Name: `barbertime-backup-key`
-   - Allow access to: `barbertime-backups` bucket
+   - Name: `stylora-backup-key`
+   - Allow access to: `stylora-backups` bucket
    - Type: Read and Write
    - Copy the `keyID` and `applicationKey`
 
@@ -245,7 +245,7 @@ Automated daily backups to S3-compatible storage (Backblaze B2, AWS S3, etc.) wi
 
 1. **Create S3 Bucket:**
    ```bash
-   aws s3 mb s3://barbertime-backups --region us-east-1
+   aws s3 mb s3://stylora-backups --region us-east-1
    ```
 
 2. **Create IAM User:**
@@ -265,7 +265,7 @@ DATABASE_URL=mysql://user:password@host:port/database
 # S3/Backblaze B2 Configuration
 BACKUP_S3_ENDPOINT=https://s3.us-west-000.backblazeb2.com
 BACKUP_S3_REGION=us-west-000
-BACKUP_S3_BUCKET=barbertime-backups
+BACKUP_S3_BUCKET=stylora-backups
 BACKUP_S3_ACCESS_KEY=your_key_id
 BACKUP_S3_SECRET_KEY=your_secret_key
 BACKUP_RETENTION_DAYS=30
@@ -287,7 +287,7 @@ console.log(result);
 1. **Download Backup:**
    ```bash
    # Using AWS CLI (works with Backblaze B2 too)
-   aws s3 cp s3://barbertime-backups/backups/database-2024-01-15.sql.gz . \
+   aws s3 cp s3://stylora-backups/backups/database-2024-01-15.sql.gz . \
      --endpoint-url https://s3.us-west-000.backblazeb2.com
    ```
 
@@ -306,7 +306,7 @@ console.log(result);
 - Backups run daily at 3:00 AM server time
 - Check logs for backup status:
   ```bash
-  railway logs --service barbertime-production | grep backup
+  railway logs --service stylora-production | grep backup
   ```
 - Failed backups are automatically reported to Sentry
 
@@ -341,7 +341,7 @@ SENTRY_PROFILES_SAMPLE_RATE=0.1
 # Backups
 BACKUP_S3_ENDPOINT=https://s3.us-west-000.backblazeb2.com
 BACKUP_S3_REGION=us-west-000
-BACKUP_S3_BUCKET=barbertime-backups
+BACKUP_S3_BUCKET=stylora-backups
 BACKUP_S3_ACCESS_KEY=your-key-id
 BACKUP_S3_SECRET_KEY=your-secret-key
 BACKUP_RETENTION_DAYS=30
@@ -365,9 +365,9 @@ VITE_SENTRY_ENVIRONMENT=production
 VITE_SENTRY_TRACES_SAMPLE_RATE=0.1
 
 # App Configuration
-VITE_APP_TITLE=BarberTime
+VITE_APP_TITLE=Stylora
 VITE_APP_LOGO=/logo.png
-VITE_APP_ID=barbertime
+VITE_APP_ID=stylora
 ```
 
 ---
@@ -483,7 +483,7 @@ env | grep VITE_
 **Solution:**
 ```bash
 # Check Railway logs
-railway logs --service barbertime-production
+railway logs --service stylora-production
 
 # Verify environment variables
 railway variables
@@ -523,7 +523,7 @@ railway up
    ```
 2. Test S3 connection:
    ```bash
-   aws s3 ls s3://barbertime-backups \
+   aws s3 ls s3://stylora-backups \
      --endpoint-url https://s3.us-west-000.backblazeb2.com
    ```
 3. Check bucket permissions

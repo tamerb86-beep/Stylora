@@ -34,7 +34,7 @@ export default function MyBookings() {
   const [selectedBookingForHistory, setSelectedBookingForHistory] = useState<number | null>(null);
 
   // Get tenant ID from URL or context (for now, hardcoded - should come from context)
-  const tenantId = new URLSearchParams(window.location.search).get("tenantId") || "demo-tenant-barbertime";
+  const tenantId = new URLSearchParams(window.location.search).get("tenantId") || "demo-tenant-stylora";
 
   // Fetch bookings
   const { data: bookings = [], isLoading, refetch } = trpc.myBookings.list.useQuery({

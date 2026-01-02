@@ -50,7 +50,7 @@ END:VCALENDAR`;
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = "barbertime-booking.ics";
+    link.download = "stylora-booking.ics";
     link.click();
     URL.revokeObjectURL(url);
   };

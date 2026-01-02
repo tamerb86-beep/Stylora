@@ -66,7 +66,7 @@
 2. `SMTP_PORT` - منفذ SMTP (587 لـ TLS أو 465 لـ SSL)
 3. `SMTP_USER` - اسم المستخدم/البريد الإلكتروني
 4. `SMTP_PASS` - كلمة المرور أو مفتاح API
-5. `SMTP_FROM_EMAIL` - عنوان البريد المرسل (مثال: noreply@barbertime.app)
+5. `SMTP_FROM_EMAIL` - عنوان البريد المرسل (مثال: noreply@stylora.app)
 
 **الخيارات المقترحة:**
 - **Gmail SMTP** (مجاني للاستخدام الشخصي)

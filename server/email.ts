@@ -10,7 +10,7 @@ import { sendEmailViaSES, isAWSSESConfigured } from "./_core/aws-ses";
  * - SMTP_PORT: SMTP server port (default: 587)
  * - SMTP_USER: SMTP username
  * - SMTP_PASS: SMTP password
- * - SMTP_FROM_EMAIL: From email address (default: no-reply@barbertime.app)
+ * - SMTP_FROM_EMAIL: From email address (default: no-reply@stylora.app)
  */
 
 // Create transporter (reused across all emails)
@@ -171,7 +171,7 @@ export function renderBookingConfirmationEmail(params: {
           <p style="margin-top: 30px;">Hilsen<br/><strong>${params.salonName}</strong></p>
         </div>
         <div class="footer">
-          <p>Denne e-posten ble sendt automatisk fra BarberTime</p>
+          <p>Denne e-posten ble sendt automatisk fra Stylora</p>
         </div>
       </body>
       </html>
@@ -328,7 +328,7 @@ export function renderBookingCancellationEmail(params: {
           <p style="margin-top: 30px;">Hilsen<br/><strong>${params.salonName}</strong></p>
         </div>
         <div class="footer">
-          <p>Denne e-posten ble sendt automatisk fra BarberTime</p>
+          <p>Denne e-posten ble sendt automatisk fra Stylora</p>
         </div>
       </body>
       </html>
@@ -487,7 +487,7 @@ export function renderReceiptEmail(params: {
           <p style="margin-top: 30px;">Hilsen<br/><strong>${params.salonName}</strong></p>
         </div>
         <div class="footer">
-          <p>Denne e-posten ble sendt automatisk fra BarberTime</p>
+          <p>Denne e-posten ble sendt automatisk fra Stylora</p>
         </div>
       </body>
       </html>

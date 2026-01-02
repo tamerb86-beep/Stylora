@@ -62,7 +62,7 @@ describe("Domain Settings", () => {
 
       expect(result).toBeDefined();
       expect(result.subdomain).toBe(testSubdomain);
-      expect(result.bookingUrl).toBe(`https://${testSubdomain}.barbertime.no/book`);
+      expect(result.bookingUrl).toBe(`https://${testSubdomain}.stylora.no/book`);
       expect(result.lastUpdated).toBeDefined();
     });
 
@@ -194,7 +194,7 @@ describe("Domain Settings", () => {
 
       expect(result.success).toBe(true);
       expect(result.subdomain).toBe(newSubdomain);
-      expect(result.bookingUrl).toBe(`https://${newSubdomain}.barbertime.no/book`);
+      expect(result.bookingUrl).toBe(`https://${newSubdomain}.stylora.no/book`);
 
       // Verify it was actually updated
       const domainInfo = await caller.salonSettings.getDomainInfo();

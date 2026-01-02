@@ -1,7 +1,7 @@
 # TypeScript Memory Issue - Solution
 
 ## Problem
-The BarberTime project has grown large causing TypeScript compiler to run out of memory:
+The Stylora project has grown large causing TypeScript compiler to run out of memory:
 ```
 FATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory
 ```
@@ -29,7 +29,7 @@ FATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memor
 ## Verification
 Test the fix:
 ```bash
-cd /home/ubuntu/barbertime-website
+cd /home/ubuntu/stylora-website
 pnpm check  # Should complete without memory errors
 ```
 

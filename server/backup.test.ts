@@ -60,7 +60,7 @@ describe("Backup System", () => {
     expect(result.backupId).toBeGreaterThan(0);
     expect(result.fileName).toContain("backup-");
     expect(result.fileName).toContain(".sql");
-    expect(result.sqlContent).toContain("-- BarberTime Database Backup");
+    expect(result.sqlContent).toContain("-- Stylora Database Backup");
     expect(result.sqlContent).toContain(`-- Tenant: ${testTenantId}`);
     expect(result.size).toBeGreaterThan(0);
   });
@@ -82,7 +82,7 @@ describe("Backup System", () => {
 
     const sqlContent = await regenerateBackupSQL(firstBackup.id, testTenantId);
 
-    expect(sqlContent).toContain("-- BarberTime Database Backup");
+    expect(sqlContent).toContain("-- Stylora Database Backup");
     expect(sqlContent).toContain(`-- Tenant: ${testTenantId}`);
     expect(sqlContent).toContain("SET FOREIGN_KEY_CHECKS=0");
     expect(sqlContent).toContain("SET FOREIGN_KEY_CHECKS=1");

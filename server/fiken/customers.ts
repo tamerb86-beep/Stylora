@@ -1,7 +1,7 @@
 /**
  * Fiken Customer Sync Module
  * 
- * Handles syncing customers between BarberTime and Fiken
+ * Handles syncing customers between Stylora and Fiken
  */
 
 import { getDb } from "../db";
@@ -17,7 +17,7 @@ export interface CustomerSyncResult {
 }
 
 /**
- * Map BarberTime customer to Fiken contact format
+ * Map Stylora customer to Fiken contact format
  */
 export function mapCustomerToFiken(customer: {
   id: number;

@@ -265,7 +265,7 @@ export function registerAuthRoutes(app: Express) {
   // Demo login endpoint - auto-login to demo account
   app.post("/api/auth/demo-login", async (req: Request, res: Response) => {
     try {
-      const DEMO_EMAIL = "demo@barbertime.no";
+      const DEMO_EMAIL = "demo@stylora.no";
       
       // Get demo user from database
       const dbInstance = await db.getDb();

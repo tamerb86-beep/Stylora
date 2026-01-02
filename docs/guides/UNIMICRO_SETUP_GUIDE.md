@@ -1,4 +1,4 @@
-# Unimicro Integrasjonsguide for BarberTime
+# Unimicro Integrasjonsguide for Stylora
 
 ## 📋 Innholdsfortegnelse
 
@@ -6,7 +6,7 @@
 2. [Fordeler](#fordeler)
 3. [Forutsetninger](#forutsetninger)
 4. [Steg 1: Opprett API-klient i Unimicro](#steg-1-opprett-api-klient-i-unimicro)
-5. [Steg 2: Konfigurer BarberTime](#steg-2-konfigurer-barbertime)
+5. [Steg 2: Konfigurer Stylora](#steg-2-konfigurer-stylora)
 6. [Steg 3: Test tilkoblingen](#steg-3-test-tilkoblingen)
 7. [Steg 4: Velg synkroniseringsfrekvens](#steg-4-velg-synkroniseringsfrekvens)
 8. [Bruk](#bruk)
@@ -16,7 +16,7 @@
 
 ## Oversikt
 
-Unimicro-integrasjonen lar BarberTime automatisk synkronisere salgsdata, kunder og betalinger til ditt Unimicro regnskapssystem. Dette eliminerer dobbeltføring og sparer deg for manuelt arbeid.
+Unimicro-integrasjonen lar Stylora automatisk synkronisere salgsdata, kunder og betalinger til ditt Unimicro regnskapssystem. Dette eliminerer dobbeltføring og sparer deg for manuelt arbeid.
 
 **Hva synkroniseres:**
 - ✅ **Kunder** - Automatisk opprett/oppdater kunder i Unimicro
@@ -42,7 +42,7 @@ Unimicro-integrasjonen lar BarberTime automatisk synkronisere salgsdata, kunder 
 Før du starter, sørg for at du har:
 
 1. ✅ **Unimicro-konto** - Du må ha en aktiv Unimicro-konto
-2. ✅ **Admin-tilgang** - Du må ha administratortilgang i BarberTime
+2. ✅ **Admin-tilgang** - Du må ha administratortilgang i Stylora
 3. ✅ **Company ID** - Du må kjenne til din Unimicro Company ID (finnes i Unimicro-innstillinger)
 
 ---
@@ -59,7 +59,7 @@ Før du starter, sørg for at du har:
 1. Klikk på **"Applications"** i menyen
 2. Klikk på **"Create New Application"**
 3. Fyll ut skjemaet:
-   - **Application Name**: `BarberTime Integration`
+   - **Application Name**: `Stylora Integration`
    - **Application Type**: `Server Application` (OAuth 2.0 Client Credentials)
    - **Redirect URI**: Ikke nødvendig for server-til-server
 4. Klikk **"Create"**
@@ -80,11 +80,11 @@ Etter opprettelse får du:
 
 ---
 
-## Steg 2: Konfigurer BarberTime
+## Steg 2: Konfigurer Stylora
 
 ### 2.1 Åpne Unimicro-innstillinger
 
-1. Logg inn på BarberTime som **administrator**
+1. Logg inn på Stylora som **administrator**
 2. Klikk på **"Unimicro"** i sidemenyen
 3. Gå til **"Innstillinger"**-fanen
 
@@ -156,7 +156,7 @@ Klikk på **"Lagre innstillinger"** etter å ha valgt frekvens.
 ### Automatisk synkronisering
 
 Hvis du har valgt daglig/ukentlig/månedlig synkronisering:
-1. BarberTime synkroniserer automatisk på valgt tidspunkt
+1. Stylora synkroniserer automatisk på valgt tidspunkt
 2. Du får en e-postvarsling hvis synkroniseringen mislykkes
 3. Sjekk **"Logg"**-fanen for å se synkroniseringshistorikk
 
@@ -205,7 +205,7 @@ Hvis du vil synkronisere umiddelbart:
 
 **Løsning:**
 1. Gå til **"Logg"**-fanen og se feilmeldingen
-2. Rett opp i dataene i BarberTime
+2. Rett opp i dataene i Stylora
 3. Prøv manuell synkronisering igjen
 
 ### Problem: "Walk-in kunder ikke støttet"
@@ -214,19 +214,19 @@ Hvis du vil synkronisere umiddelbart:
 - Walk-in kunder (uten kundeinfo) kan ikke synkroniseres til Unimicro
 
 **Løsning:**
-1. Opprett en "Walk-in"-kunde i BarberTime med standard kontaktinfo
+1. Opprett en "Walk-in"-kunde i Stylora med standard kontaktinfo
 2. Bruk denne kunden for alle walk-in salg
 3. Synkroniser denne kunden til Unimicro først
 
 ### Problem: "Fakturaer vises ikke i Unimicro"
 
 **Mulige årsaker:**
-1. ❌ Ordre er ikke fullført i BarberTime
+1. ❌ Ordre er ikke fullført i Stylora
 2. ❌ Kunde er ikke synkronisert først
 3. ❌ Synkronisering ikke kjørt ennå
 
 **Løsning:**
-1. Sørg for at ordren har status "Completed" i BarberTime
+1. Sørg for at ordren har status "Completed" i Stylora
 2. Sjekk at kunden er synkronisert (se Status-fanen)
 3. Trigger manuell synkronisering
 
@@ -236,8 +236,8 @@ Hvis du vil synkronisere umiddelbart:
 
 Hvis du fortsatt har problemer:
 
-**BarberTime Support:**
-- E-post: support@barbertime.no
+**Stylora Support:**
+- E-post: support@stylora.no
 - Telefon: +47 XXX XX XXX
 
 **Unimicro Support:**

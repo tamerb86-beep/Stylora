@@ -7,7 +7,7 @@ The stat cards in the Dashboard page had overlapping text where the title (e.g.,
 The flex container with `justify-between` was not properly constraining the title text, allowing it to expand and overlap with the icon. The title needed proper flex constraints to prevent overflow.
 
 ## Solution Applied
-Modified the stat card header layout in `/home/ubuntu/barbertime/client/src/pages/Dashboard.tsx`:
+Modified the stat card header layout in `/home/ubuntu/stylora/client/src/pages/Dashboard.tsx`:
 
 ### Changes Made (Line 110-116)
 1. Reduced spacing from `space-y-4` to `space-y-3` for tighter layout

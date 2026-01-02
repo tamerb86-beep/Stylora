@@ -1,4 +1,4 @@
-# iZettle Payment Integration Guide for BarberTime
+# iZettle Payment Integration Guide for Stylora
 
 **Author:** Stylora Team  
 **Last Updated:** December 18, 2024  
@@ -8,9 +8,9 @@
 
 ## Introduction
 
-This comprehensive guide walks you through the process of integrating iZettle payment terminals into your BarberTime salon management system. iZettle (now part of PayPal Zettle) is a leading mobile point-of-sale solution used by thousands of businesses across Europe for fast, secure card and contactless payments.
+This comprehensive guide walks you through the process of integrating iZettle payment terminals into your Stylora salon management system. iZettle (now part of PayPal Zettle) is a leading mobile point-of-sale solution used by thousands of businesses across Europe for fast, secure card and contactless payments.
 
-By enabling iZettle integration in BarberTime, you can process payments directly from your salon's point-of-sale interface, with automatic synchronization of all transactions, simplified refund management, and comprehensive payment reporting.
+By enabling iZettle integration in Stylora, you can process payments directly from your salon's point-of-sale interface, with automatic synchronization of all transactions, simplified refund management, and comprehensive payment reporting.
 
 ---
 
@@ -23,7 +23,7 @@ Before you begin, ensure you have the following:
 | **iZettle Business Account** | An active iZettle business account with payment processing enabled |
 | **iZettle Terminal** | At least one iZettle card reader (Reader 2, Terminal, or Pro) |
 | **Business Registration** | Your business must be registered in a supported country (Norway, Sweden, UK, etc.) |
-| **Admin Access** | Administrator access to your BarberTime system |
+| **Admin Access** | Administrator access to your Stylora system |
 | **Internet Connection** | Stable internet connection for OAuth authentication |
 | **Time Required** | Approximately 15-20 minutes for complete setup |
 
@@ -70,7 +70,7 @@ If you don't already have an iZettle card reader, you can order one from the iZe
 
 ## Step 2: Access iZettle Developer Portal
 
-To integrate iZettle with BarberTime, you need to create OAuth credentials through the iZettle Developer Portal.
+To integrate iZettle with Stylora, you need to create OAuth credentials through the iZettle Developer Portal.
 
 ### 2.1 Log In to iZettle Account
 
@@ -109,7 +109,7 @@ Once you have developer access:
 
 | Field | Value | Description |
 |-------|-------|-------------|
-| **Application Name** | BarberTime POS Integration | A descriptive name for your integration |
+| **Application Name** | Stylora POS Integration | A descriptive name for your integration |
 | **Application Type** | Web Application | Select web application type |
 | **Redirect URI** | `https://your-domain.com/api/izettle/callback` | OAuth callback URL (replace with your actual domain) |
 | **Description** | Point-of-sale integration for salon management | Brief description of the integration |
@@ -128,13 +128,13 @@ After creating the application, iZettle will display your OAuth credentials. **C
 
 ---
 
-## Step 4: Configure BarberTime iZettle Integration
+## Step 4: Configure Stylora iZettle Integration
 
-Now that you have your OAuth credentials, it's time to configure BarberTime.
+Now that you have your OAuth credentials, it's time to configure Stylora.
 
 ### 4.1 Access iZettle Settings
 
-1. Log in to your BarberTime admin dashboard
+1. Log in to your Stylora admin dashboard
 2. Enable **"Advanced Mode"** if not already enabled (toggle in sidebar)
 3. Navigate to **"iZettle"** in the left sidebar menu
 4. You will see the iZettle integration page
@@ -146,7 +146,7 @@ Click the **"Koble til iZettle"** (Connect to iZettle) button.
 You will be redirected to the iZettle authorization page where you need to:
 
 1. **Log in** to your iZettle account (if not already logged in)
-2. **Review permissions** that BarberTime is requesting:
+2. **Review permissions** that Stylora is requesting:
    - Read payment information
    - Create payments
    - Process refunds
@@ -155,7 +155,7 @@ You will be redirected to the iZettle authorization page where you need to:
 
 ### 4.3 Complete Authorization
 
-After authorizing, you will be redirected back to BarberTime. You should see:
+After authorizing, you will be redirected back to Stylora. You should see:
 
 - ✅ **Connection Status:** Connected
 - 🟢 **Status Badge:** Active
@@ -171,11 +171,11 @@ Before using iZettle in production, it's important to test the integration.
 
 ### 5.1 Process Test Payment
 
-1. Navigate to **"Kasse (Betaling)"** (POS Payment) in BarberTime
+1. Navigate to **"Kasse (Betaling)"** (POS Payment) in Stylora
 2. Create a test order with a small amount (e.g., 10 NOK)
 3. Select **"iZettle"** as the payment method
 4. Use your iZettle terminal to process the payment
-5. Verify that the transaction appears in BarberTime
+5. Verify that the transaction appears in Stylora
 
 ### 5.2 Verify Transaction Sync
 
@@ -197,7 +197,7 @@ To test refund functionality:
 2. Find your test transaction
 3. Click **"Refunder"** (Refund)
 4. Process the refund
-5. Verify that the refund appears in both BarberTime and iZettle
+5. Verify that the refund appears in both Stylora and iZettle
 
 ---
 
@@ -220,7 +220,7 @@ Regularly monitor your iZettle transactions:
 
 | Platform | What You Can See |
 |----------|-----------------|
-| **BarberTime Dashboard** | Real-time payment status, booking details, customer information |
+| **Stylora Dashboard** | Real-time payment status, booking details, customer information |
 | **iZettle App** | Terminal management, transaction history, settlement reports |
 | **iZettle Web Dashboard** | Detailed analytics, export reports, refund management |
 
@@ -245,7 +245,7 @@ Settlement times may vary based on your bank and account type.
 **Cause:** OAuth callback URL mismatch or invalid credentials
 
 **Solution:**
-1. Verify that the Redirect URI in iZettle Developer Portal matches your BarberTime domain exactly
+1. Verify that the Redirect URI in iZettle Developer Portal matches your Stylora domain exactly
 2. Ensure there are no trailing slashes or typos
 3. Check that your OAuth credentials are correct
 4. Try disconnecting and reconnecting
@@ -266,7 +266,7 @@ Settlement times may vary based on your bank and account type.
 
 **Solution:**
 1. Wait 1-2 minutes and refresh the page
-2. Check iZettle connection status in BarberTime
+2. Check iZettle connection status in Stylora
 3. Verify that the payment was successful in the iZettle app
 4. If issue persists, disconnect and reconnect iZettle
 
@@ -316,7 +316,7 @@ Ensure your iZettle integration complies with:
 - **Norwegian Privacy Laws** (Personopplysningsloven)
 - **PSD2** (Payment Services Directive 2)
 
-> **Note:** BarberTime and iZettle handle all payment processing securely. You never store or process raw payment card data, significantly reducing your PCI compliance burden.
+> **Note:** Stylora and iZettle handle all payment processing securely. You never store or process raw payment card data, significantly reducing your PCI compliance burden.
 
 ---
 
@@ -337,9 +337,9 @@ For further assistance and detailed technical documentation, refer to these offi
 
 If you encounter issues not covered in this guide, contact support:
 
-**BarberTime Support:**
-- Email: support@barbertime.no
-- Help Center: [https://help.barbertime.no](https://help.barbertime.no)
+**Stylora Support:**
+- Email: support@stylora.no
+- Help Center: [https://help.stylora.no](https://help.stylora.no)
 
 **iZettle Support:**
 - Phone: +47 21 93 05 00 (Norway)
@@ -350,7 +350,7 @@ If you encounter issues not covered in this guide, contact support:
 
 ## Conclusion
 
-Congratulations! You have successfully integrated iZettle payments into your BarberTime salon management system. Your staff can now process card and contactless payments seamlessly from the point-of-sale interface, with automatic synchronization and comprehensive reporting.
+Congratulations! You have successfully integrated iZettle payments into your Stylora salon management system. Your staff can now process card and contactless payments seamlessly from the point-of-sale interface, with automatic synchronization and comprehensive reporting.
 
 By offering iZettle as a payment option, you can expect:
 

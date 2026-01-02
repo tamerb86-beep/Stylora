@@ -187,7 +187,7 @@ export default function SaasAdminOverview() {
                       </Badge>
                     </div>
                     <div className="flex items-center gap-4 mt-2 text-sm text-muted-foreground">
-                      <span>{tenant.subdomain}.barbertime.app</span>
+                      <span>{tenant.subdomain}.stylora.app</span>
                       <span>•</span>
                       <span>{tenant.planName || "Ingen plan"}</span>
                       <span>•</span>

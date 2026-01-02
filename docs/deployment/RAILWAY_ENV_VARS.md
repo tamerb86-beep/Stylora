@@ -70,7 +70,7 @@ SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
 SMTP_USER=your-email@gmail.com
 SMTP_PASS=your-app-password
-SMTP_FROM_EMAIL=noreply@barbertime.app
+SMTP_FROM_EMAIL=noreply@stylora.app
 ```
 
 **Gmail Setup:**
@@ -83,7 +83,7 @@ SMTP_FROM_EMAIL=noreply@barbertime.app
 AWS_ACCESS_KEY_ID=AKIA...
 AWS_SECRET_ACCESS_KEY=...
 AWS_REGION=eu-north-1
-AWS_SES_FROM_EMAIL=noreply@barbertime.app
+AWS_SES_FROM_EMAIL=noreply@stylora.app
 ```
 
 **AWS SES Setup:**

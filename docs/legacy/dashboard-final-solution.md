@@ -97,7 +97,7 @@ The stat cards were using custom div structure with:
 - Maintains readability at all sizes
 
 ## Files Modified
-- `/home/ubuntu/barbertime/client/src/pages/Dashboard.tsx`
+- `/home/ubuntu/stylora/client/src/pages/Dashboard.tsx`
 
 ## Changes Summary
 1. Replaced custom div structure with Card component

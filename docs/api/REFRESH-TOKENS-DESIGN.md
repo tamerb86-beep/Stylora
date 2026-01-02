@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document describes the refresh token implementation for BarberTime to allow automatic session renewal without requiring users to re-login every 30 days.
+This document describes the refresh token implementation for Stylora to allow automatic session renewal without requiring users to re-login every 30 days.
 
 ---
 

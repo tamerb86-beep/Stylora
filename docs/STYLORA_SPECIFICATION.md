@@ -1,8 +1,8 @@
-# BarberTime SaaS – Complete Technical Specification
+# Stylora SaaS – Complete Technical Specification
 
 ## SECTION 1 – Vision & Core Purpose
 
-### Why BarberTime Exists in the Norwegian Market
+### Why Stylora Exists in the Norwegian Market
 
 Norwegian barbershops, hair salons, and beauty salons face significant operational challenges that stem from outdated manual systems and fragmented digital tools. Many small salon owners rely on paper appointment books, spreadsheets, and disconnected payment solutions, leading to missed appointments, revenue leakage, and administrative overhead that consumes time better spent with customers.
 
@@ -20,13 +20,13 @@ Existing booking platforms in the Norwegian market often fall into two problemat
 
 ### Core Value Proposition vs Generic Booking Apps
 
-BarberTime differentiates itself through **Norwegian-first design**. Every feature is built specifically for the Norwegian market: native Vipps integration, Norwegian VAT handling (25% standard rate with proper codes), SAF-T-compatible export formats, and Norwegian language throughout the interface.
+Stylora differentiates itself through **Norwegian-first design**. Every feature is built specifically for the Norwegian market: native Vipps integration, Norwegian VAT handling (25% standard rate with proper codes), SAF-T-compatible export formats, and Norwegian language throughout the interface.
 
-**Vertical integration** means BarberTime is not just a booking tool—it combines appointment management, customer relationship management, inventory tracking, point-of-sale functionality, accounting integration, and business intelligence into a single coherent system. This eliminates the need for salon owners to stitch together multiple subscriptions and manually transfer data between systems.
+**Vertical integration** means Stylora is not just a booking tool—it combines appointment management, customer relationship management, inventory tracking, point-of-sale functionality, accounting integration, and business intelligence into a single coherent system. This eliminates the need for salon owners to stitch together multiple subscriptions and manually transfer data between systems.
 
-**Simplicity without sacrifice** is the design philosophy. BarberTime provides enterprise-grade functionality (multi-location support, role-based access control, comprehensive reporting) while maintaining an interface so intuitive that a salon owner can onboard their team in under an hour without technical training.
+**Simplicity without sacrifice** is the design philosophy. Stylora provides enterprise-grade functionality (multi-location support, role-based access control, comprehensive reporting) while maintaining an interface so intuitive that a salon owner can onboard their team in under an hour without technical training.
 
-**Fair pricing** aligns with the economics of small Norwegian salons. Unlike enterprise systems that charge per-location or per-feature, BarberTime offers transparent tier-based pricing that scales with the salon's size, making professional tools accessible to single-chair barbershops and multi-location chains alike.
+**Fair pricing** aligns with the economics of small Norwegian salons. Unlike enterprise systems that charge per-location or per-feature, Stylora offers transparent tier-based pricing that scales with the salon's size, making professional tools accessible to single-chair barbershops and multi-location chains alike.
 
 ### Why "Enkelt og Ryddig" UX is Central
 
@@ -38,7 +38,7 @@ Norwegian salon owners are **craftspeople, not IT professionals**. They excel at
 
 **Forgiveness** is built into the system. Accidental deletions can be undone. Draft appointments can be saved and completed later. The system auto-saves form inputs so that interruptions (a customer walking in, a phone call) don't result in lost work.
 
-**Performance** is a UX feature. BarberTime loads in under two seconds on Norwegian mobile networks. Actions provide immediate feedback—when a user books an appointment, the calendar updates instantly without waiting for server confirmation. Background synchronization ensures data consistency without blocking the user.
+**Performance** is a UX feature. Stylora loads in under two seconds on Norwegian mobile networks. Actions provide immediate feedback—when a user books an appointment, the calendar updates instantly without waiting for server confirmation. Background synchronization ensures data consistency without blocking the user.
 
 This focus on simplicity is not about dumbing down the software—it's about **respecting the user's time and expertise**. Salon owners should spend their cognitive energy on their craft, not on learning software.
 
@@ -48,7 +48,7 @@ This focus on simplicity is not about dumbing down the software—it's about **r
 
 ### 2.1 Booking Engine
 
-The booking engine is the core of BarberTime, responsible for managing appointment scheduling, conflict detection, and customer notifications. It must handle the complexity of multiple employees with varying schedules, services with different durations, and customer preferences while presenting a simple interface.
+The booking engine is the core of Stylora, responsible for managing appointment scheduling, conflict detection, and customer notifications. It must handle the complexity of multiple employees with varying schedules, services with different durations, and customer preferences while presenting a simple interface.
 
 **Time-slot generation** operates on a per-employee, per-service, per-day basis. Each employee has a weekly schedule template defining their working hours (e.g., Monday 09:00-17:00, Tuesday 10:00-18:00). The system generates available time slots by:
 
@@ -217,7 +217,7 @@ Sunday: Off
 
 **Commission calculation logic**:
 
-Many Norwegian salons pay employees a base salary plus commission on services and product sales. BarberTime supports flexible commission structures:
+Many Norwegian salons pay employees a base salary plus commission on services and product sales. Stylora supports flexible commission structures:
 
 - **Percentage of service revenue**: Employee receives X% of service price (e.g., 40% of "Herreklipp" price)
 - **Percentage of product sales**: Employee receives Y% of product price when they sell retail products
@@ -237,7 +237,7 @@ The payment module handles all financial transactions, integrating with payment 
 
 **Stripe integration for card payments**:
 
-BarberTime uses Stripe Checkout for card payments in NOK:
+Stylora uses Stripe Checkout for card payments in NOK:
 
 1. Customer selects services and products
 2. System calculates total including VAT (25% standard rate for most services, 15% for certain treatments)
@@ -259,7 +259,7 @@ BarberTime uses Stripe Checkout for card payments in NOK:
 
 **Payment abstraction layer**:
 
-To support future payment providers (especially Vipps), BarberTime implements an abstraction layer:
+To support future payment providers (especially Vipps), Stylora implements an abstraction layer:
 
 ```typescript
 interface PaymentProvider {
@@ -299,7 +299,7 @@ For customers who pay in person with cash or card terminal:
 
 **PCI considerations**:
 
-BarberTime never handles raw card data—all card information flows directly to Stripe. The system only stores:
+Stylora never handles raw card data—all card information flows directly to Stripe. The system only stores:
 
 - Stripe payment intent ID
 - Last 4 digits of card (provided by Stripe)
@@ -425,7 +425,7 @@ At end of business day, staff performs cash register reconciliation:
 **Export formats**:
 
 - **CSV export**: Customizable columns, UTF-8 with BOM encoding (for Excel compatibility), date range filter, entity filter (all employees, specific employee, all services, specific service)
-- **SAF-T friendly format**: Norwegian Standard Audit File for Tax (SAF-T) is the required format for tax audits. BarberTime exports include all required fields:
+- **SAF-T friendly format**: Norwegian Standard Audit File for Tax (SAF-T) is the required format for tax audits. Stylora exports include all required fields:
   - Transaction date (YYYY-MM-DD)
   - Transaction type (sale, refund, adjustment)
   - Amount excluding VAT
@@ -453,7 +453,7 @@ The notification module handles all customer and staff communications via SMS an
 
 **SMS provider integration**:
 
-BarberTime uses a generic SMS gateway interface that can connect to Norwegian providers (Twilio, Link Mobility, Intelecom):
+Stylora uses a generic SMS gateway interface that can connect to Norwegian providers (Twilio, Link Mobility, Intelecom):
 
 ```typescript
 interface SMSProvider {
@@ -466,7 +466,7 @@ Configuration per tenant:
 
 - Provider selection (dropdown)
 - API credentials (encrypted at rest)
-- Sender name (max 11 characters, alphanumeric, e.g., "BarberTime" or salon name)
+- Sender name (max 11 characters, alphanumeric, e.g., "Stylora" or salon name)
 - SMS quota per month (based on subscription plan)
 
 **Email provider integration**:
@@ -482,7 +482,7 @@ interface EmailProvider {
 
 **Retry logic**:
 
-Notifications can fail due to temporary issues (provider downtime, network errors). BarberTime implements exponential backoff:
+Notifications can fail due to temporary issues (provider downtime, network errors). Stylora implements exponential backoff:
 
 1. Initial send attempt
 2. If failure, wait 1 minute, retry
@@ -518,7 +518,7 @@ To prevent abuse and control costs:
 
 ### 2.8 Multi-Tenant SaaS
 
-BarberTime is a multi-tenant SaaS platform where each salon is a separate tenant with isolated data and customizable settings.
+Stylora is a multi-tenant SaaS platform where each salon is a separate tenant with isolated data and customizable settings.
 
 **Tenant model**:
 
@@ -526,7 +526,7 @@ Each salon is represented by a tenant entity:
 
 - **Tenant ID**: Unique identifier (UUID)
 - **Salon name**: Display name (e.g., "Barber & Co Oslo")
-- **Subdomain**: Custom subdomain for online booking (e.g., `barberco.barbertime.no`)
+- **Subdomain**: Custom subdomain for online booking (e.g., `barberco.stylora.no`)
 - **Contact info**: Phone, email, address
 - **Business registration**: Norwegian organization number (organisasjonsnummer)
 - **Branding**: Logo URL, primary color, accent color
@@ -534,7 +534,7 @@ Each salon is represented by a tenant entity:
 
 **Tenant isolation patterns**:
 
-BarberTime uses **row-based isolation** with `tenantId` foreign key on all data tables:
+Stylora uses **row-based isolation** with `tenantId` foreign key on all data tables:
 
 ```sql
 CREATE TABLE appointments (
@@ -585,10 +585,10 @@ System enforces limits:
 
 **GDPR compliance**:
 
-BarberTime processes personal data of salon customers and must comply with EU GDPR (which Norway implements through national law):
+Stylora processes personal data of salon customers and must comply with EU GDPR (which Norway implements through national law):
 
 - **Lawful basis**: Contract (for service delivery) and consent (for marketing)
-- **Data processing agreements**: Salons are data controllers, BarberTime is data processor. Standard DPA is provided to all customers
+- **Data processing agreements**: Salons are data controllers, Stylora is data processor. Standard DPA is provided to all customers
 - **Data minimization**: Only collect necessary data
 - **Purpose limitation**: Data collected for one purpose (booking) cannot be used for another (marketing) without consent
 - **Storage limitation**: Configurable retention periods, automated deletion
@@ -647,7 +647,7 @@ Long-running tasks are processed asynchronously:
 - Processing exports
 - Cleaning up expired reservations
 
-BarberTime uses a job queue (implemented with database table + worker process):
+Stylora uses a job queue (implemented with database table + worker process):
 
 ```sql
 CREATE TABLE jobs (
@@ -712,7 +712,7 @@ If deployed on Vercel (serverless functions), cold starts can add 1-2 second lat
 
 **Horizontal scaling architecture**:
 
-BarberTime is designed to scale horizontally:
+Stylora is designed to scale horizontally:
 
 - **Stateless API servers**: No session state stored in memory, all state in database or Redis
 - **Load balancer**: Distributes traffic across multiple API server instances
@@ -740,7 +740,7 @@ As tenant count grows, database size increases. Strategies:
 
 ### Entity Relationship Overview
 
-The BarberTime database consists of 15 core tables organized into logical domains:
+The Stylora database consists of 15 core tables organized into logical domains:
 
 **Identity & Access**: `tenants`, `users`, `sessions`
 
@@ -1169,7 +1169,7 @@ Audit logs track changes to various entity types with different schemas. JSON pr
 
 ## SECTION 5 – API Design (tRPC)
 
-BarberTime uses **tRPC** for type-safe API communication between frontend and backend. All procedures are defined in `server/routers.ts` and automatically generate TypeScript types for the frontend.
+Stylora uses **tRPC** for type-safe API communication between frontend and backend. All procedures are defined in `server/routers.ts` and automatically generate TypeScript types for the frontend.
 
 ### Authentication Endpoints
 
@@ -1797,7 +1797,7 @@ BarberTime uses **tRPC** for type-safe API communication between frontend and ba
 
 ### Page Map
 
-BarberTime consists of two main applications: **Public Booking Site** (for customers) and **Admin Dashboard** (for salon staff).
+Stylora consists of two main applications: **Public Booking Site** (for customers) and **Admin Dashboard** (for salon staff).
 
 #### Public Booking Site
 
@@ -1906,7 +1906,7 @@ BarberTime consists of two main applications: **Public Booking Site** (for custo
 
 ### Layout Guidelines (Next.js + React + TailwindCSS)
 
-BarberTime uses a modern, clean design with Norwegian sensibilities:
+Stylora uses a modern, clean design with Norwegian sensibilities:
 
 **Color Palette**:
 - Primary: Deep blue (#1E3A8A) - trust, professionalism
@@ -1954,7 +1954,7 @@ BarberTime uses a modern, clean design with Norwegian sensibilities:
 
 ### Consistent Design System
 
-BarberTime uses a **design token system** to ensure consistency:
+Stylora uses a **design token system** to ensure consistency:
 
 **Colors**: Defined as CSS variables in `index.css`, referenced throughout components
 
@@ -2009,7 +2009,7 @@ This design system is documented in `DESIGN_SYSTEM.md` for future developers.
 6. **Go Live**
    - Checklist shows: "Alt klart! Åpne for online booking"
    - User clicks "Aktiver online booking"
-   - System generates public booking URL: `https://barberco.barbertime.no/book`
+   - System generates public booking URL: `https://barberco.stylora.no/book`
    - User receives confirmation: "Din online booking er nå aktiv! Del denne lenken med kundene dine."
 
 **Success Criteria**: Salon can receive online bookings within 10 minutes of signup.
@@ -2021,7 +2021,7 @@ This design system is documented in `DESIGN_SYSTEM.md` for future developers.
 **Steps**:
 
 1. **Customer Flow**
-   - Customer visits `https://barberco.barbertime.no/book` (from salon's website, social media, or Google)
+   - Customer visits `https://barberco.stylora.no/book` (from salon's website, social media, or Google)
    - Sees salon name, address, phone number at top
 
 2. **Select Service**
@@ -2342,7 +2342,7 @@ jobs:
 
 ### Plan Definitions
 
-BarberTime offers three subscription tiers:
+Stylora offers three subscription tiers:
 
 #### Start / Lite
 
@@ -2423,12 +2423,12 @@ BarberTime offers three subscription tiers:
    - Stripe processes payment
 
 3. **Webhook: `customer.subscription.created`**
-   - Stripe sends webhook to BarberTime
+   - Stripe sends webhook to Stylora
    - System verifies webhook signature
    - Extracts subscription data: customer ID, subscription ID, plan, status, current period
    - Creates or updates `tenant_subscriptions` record:
      - `stripe_subscription_id`: subscription ID from Stripe
-     - `plan_id`: corresponding plan in BarberTime database
+     - `plan_id`: corresponding plan in Stylora database
      - `status`: 'active'
      - `current_period_start`: start date
      - `current_period_end`: end date
@@ -2442,7 +2442,7 @@ BarberTime offers three subscription tiers:
 5. **Webhook: `invoice.payment_failed`**
    - Stripe sends webhook if payment fails (expired card, insufficient funds)
    - System updates subscription status to 'past_due'
-   - System sends email to customer: "Betalingen din feilet. Vennligst oppdater betalingsmetoden din for å fortsette å bruke BarberTime."
+   - System sends email to customer: "Betalingen din feilet. Vennligst oppdater betalingsmetoden din for å fortsette å bruke Stylora."
    - System displays banner in dashboard: "Abonnementet ditt er forfalt. Oppdater betalingsmetode."
 
 6. **Webhook: `customer.subscription.updated`**
@@ -2571,7 +2571,7 @@ BarberTime offers three subscription tiers:
 - Salon owners can browse and install integrations (e.g., "Instagram Auto-Posting", "Google Ads Integration")
 
 **White Label**:
-- Large salon chains can white-label BarberTime
+- Large salon chains can white-label Stylora
 - Custom branding (logo, colors, domain)
 - Premium pricing tier for white-label customers
 
@@ -2579,11 +2579,11 @@ BarberTime offers three subscription tiers:
 
 ## Conclusion
 
-This specification provides a complete blueprint for building BarberTime, a production-grade SaaS platform tailored for Norwegian salons. Every section is designed with real-world implementation in mind, balancing technical depth with practical business considerations.
+This specification provides a complete blueprint for building Stylora, a production-grade SaaS platform tailored for Norwegian salons. Every section is designed with real-world implementation in mind, balancing technical depth with practical business considerations.
 
-The focus on **simplicity** (enkelt og ryddig UX), **Norwegian-first design** (Vipps, VAT, SAF-T), and **vertical integration** (all features in one system) positions BarberTime to solve the specific pain points of Norwegian salon owners better than generic international competitors.
+The focus on **simplicity** (enkelt og ryddig UX), **Norwegian-first design** (Vipps, VAT, SAF-T), and **vertical integration** (all features in one system) positions Stylora to solve the specific pain points of Norwegian salon owners better than generic international competitors.
 
-The architecture is **scalable** (multi-tenant, horizontal scaling), **secure** (GDPR-compliant, encrypted), and **reliable** (transactions, backups, monitoring), ensuring that BarberTime can grow from a startup serving 50 salons to a market leader serving thousands.
+The architecture is **scalable** (multi-tenant, horizontal scaling), **secure** (GDPR-compliant, encrypted), and **reliable** (transactions, backups, monitoring), ensuring that Stylora can grow from a startup serving 50 salons to a market leader serving thousands.
 
 The **roadmap** provides a clear path from MVP to advanced features, allowing the team to ship value quickly while building toward a comprehensive platform that salon owners will rely on daily.
 

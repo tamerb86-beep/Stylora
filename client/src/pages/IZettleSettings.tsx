@@ -287,7 +287,7 @@ export default function IZettleSettings() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-gray-600">
-                Ta imot kort- og mobilbetalinger via iZettle-terminaler direkte fra BarberTime-kassen.
+                Ta imot kort- og mobilbetalinger via iZettle-terminaler direkte fra Stylora-kassen.
               </p>
             </CardContent>
           </Card>
@@ -306,7 +306,7 @@ export default function IZettleSettings() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-gray-600">
-                Transaksjoner synkroniseres automatisk med BarberTime for nøyaktig bokføring.
+                Transaksjoner synkroniseres automatisk med Stylora for nøyaktig bokføring.
               </p>
             </CardContent>
           </Card>
@@ -325,7 +325,7 @@ export default function IZettleSettings() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-gray-600">
-                Refunder betalinger enkelt direkte fra BarberTime uten å bruke iZettle-appen.
+                Refunder betalinger enkelt direkte fra Stylora uten å bruke iZettle-appen.
               </p>
             </CardContent>
           </Card>

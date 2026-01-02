@@ -112,8 +112,8 @@ export default function EmailVerificationRequired() {
 
           <p className="text-xs text-center text-muted-foreground">
             Trenger du hjelp? Kontakt oss på{" "}
-            <a href="mailto:support@barbertime.no" className="text-blue-600 hover:underline">
-              support@barbertime.no
+            <a href="mailto:support@stylora.no" className="text-blue-600 hover:underline">
+              support@stylora.no
             </a>
           </p>
         </CardContent>

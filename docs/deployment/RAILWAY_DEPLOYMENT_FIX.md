@@ -35,7 +35,7 @@ The `build` script has been updated to run migrations automatically:
 
 ### Step 3: Redeploy in Railway
 1. Go to Railway dashboard
-2. Open **barbertime** service
+2. Open **stylora** service
 3. Click **"Deployments"** tab
 4. Click **"Redeploy"** on the latest deployment
 
@@ -52,7 +52,7 @@ After deployment completes, check Railway logs for:
 ```
 
 ### Step 5: Test iZettle OAuth
-1. Go to your app: https://barbertime-production-5d35.up.railway.app
+1. Go to your app: https://stylora-production-5d35.up.railway.app
 2. Navigate to **Betalingsterminaler**
 3. Click **"Koble til iZettle"**
 4. Complete OAuth flow

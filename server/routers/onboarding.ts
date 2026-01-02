@@ -291,7 +291,7 @@ export const onboardingRouter = router({
           ownerName: ownerAccount.ownerName,
           ownerEmail: ownerAccount.ownerEmail,
           subdomain: salonInfo.subdomain,
-          loginUrl: `https://${salonInfo.subdomain}.barbertime.no/login`,
+          loginUrl: `https://${salonInfo.subdomain}.stylora.no/login`,
           trialDays: 14,
         });
       } catch (emailError) {

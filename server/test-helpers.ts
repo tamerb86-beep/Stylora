@@ -1,5 +1,5 @@
 /**
- * Centralized Test Helpers for BarberTime
+ * Centralized Test Helpers for Stylora
  * 
  * This file provides standard utilities for setting up test environments,
  * creating mock data, and ensuring consistent test patterns across the codebase.

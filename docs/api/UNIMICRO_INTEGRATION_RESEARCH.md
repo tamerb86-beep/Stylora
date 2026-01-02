@@ -1,12 +1,12 @@
 # Unimicro Integration Research
 
 ## Overview
-Unimicro is a popular Norwegian ERP/accounting system with a comprehensive REST API. This document outlines the integration possibilities for BarberTime.
+Unimicro is a popular Norwegian ERP/accounting system with a comprehensive REST API. This document outlines the integration possibilities for Stylora.
 
 ## Authentication
 - **Method**: OAuth 2.0 + OpenID Connect (OIDC)
 - **Flow Options**:
-  1. **Server Application** (Recommended for BarberTime)
+  1. **Server Application** (Recommended for Stylora)
      - Certificate-based authentication
      - Server acts on behalf of companies without human interaction
      - Can request necessary permissions when activated on a company
@@ -26,7 +26,7 @@ Unimicro is a popular Norwegian ERP/accounting system with a comprehensive REST 
 - **Documentation**: Swagger/OpenAPI format
 - **API Docs**: https://developer.unimicro.no/docs
 
-## Key API Endpoints for BarberTime Integration
+## Key API Endpoints for Stylora Integration
 
 ### 1. CustomerInvoice (Kundefaktura)
 **Endpoint**: `/CustomerInvoice`
@@ -56,16 +56,16 @@ Unimicro is a popular Norwegian ERP/accounting system with a comprehensive REST 
 - `OurReference` (string) - Internal reference
 - `YourReference` (string) - Customer reference
 
-**Use Case for BarberTime**:
+**Use Case for Stylora**:
 - Automatically create invoices in Unimicro when POS sales are completed
-- Sync invoice status back to BarberTime (paid/unpaid)
+- Sync invoice status back to Stylora (paid/unpaid)
 - Track outstanding invoices
 
 ### 2. Customer (Kunde)
 **Endpoint**: `/Customer` (likely available)
 
 **Use Case**:
-- Sync BarberTime customers to Unimicro
+- Sync Stylora customers to Unimicro
 - Keep customer data consistent between systems
 - Avoid duplicate data entry
 
@@ -73,23 +73,23 @@ Unimicro is a popular Norwegian ERP/accounting system with a comprehensive REST 
 **Endpoint**: `/Account`
 
 **Use Case**:
-- Map BarberTime revenue categories to Unimicro chart of accounts
+- Map Stylora revenue categories to Unimicro chart of accounts
 - Ensure proper accounting classification
 
 ### 4. Payment (Betaling)
 **Endpoint**: `/Payment` or `/InvoicePayment`
 
 **Use Case**:
-- Record payments from BarberTime POS in Unimicro
+- Record payments from Stylora POS in Unimicro
 - Match payments to invoices
 - Track cash vs card payments
 
-## Integration Architecture for BarberTime
+## Integration Architecture for Stylora
 
 ### Recommended Approach: Server-to-Server Integration
 
 ```
-BarberTime Backend (Node.js/Express)
+Stylora Backend (Node.js/Express)
     ↓
 OAuth 2.0 Certificate Authentication
     ↓
@@ -101,23 +101,23 @@ Accounting System
 ### Data Flow
 
 1. **Daily Sales Sync** (Automated)
-   - Every night at 23:00, sync completed orders from BarberTime to Unimicro
+   - Every night at 23:00, sync completed orders from Stylora to Unimicro
    - Create CustomerInvoice records for each POS sale
    - Include line items (services + products)
    - Mark as "Invoiced" (StatusCode: 42002)
 
 2. **Customer Sync** (Bi-directional)
-   - When new customer created in BarberTime → create in Unimicro
-   - When customer updated in Unimicro → update in BarberTime (webhook)
+   - When new customer created in Stylora → create in Unimicro
+   - When customer updated in Unimicro → update in Stylora (webhook)
    - Match by phone number or email
 
 3. **Payment Recording**
-   - When payment recorded in BarberTime POS → record in Unimicro
+   - When payment recorded in Stylora POS → record in Unimicro
    - Link payment to invoice
    - Update invoice status to "Paid" when fully paid
 
 4. **Accounting Entries**
-   - Map BarberTime services to Unimicro accounts
+   - Map Stylora services to Unimicro accounts
    - Automatically create journal entries for:
      - Revenue (services + products)
      - VAT (25% Norwegian standard rate)
@@ -127,21 +127,21 @@ Accounting System
 ## Implementation Steps
 
 ### Phase 1: Setup & Authentication
-1. Register BarberTime as application in Unimicro Developer Portal
+1. Register Stylora as application in Unimicro Developer Portal
 2. Create server authentication client with certificate
 3. Implement OAuth 2.0 flow in backend
 4. Store access tokens securely in database
 5. Add Unimicro credentials to salonSettings table
 
 ### Phase 2: Customer Sync
-1. Create mapping between BarberTime customers and Unimicro customers
+1. Create mapping between Stylora customers and Unimicro customers
 2. Implement customer creation endpoint
 3. Implement customer update endpoint
 4. Add "Sync to Unimicro" toggle in Settings
 
 ### Phase 3: Invoice Creation
 1. Create invoice generation logic
-2. Map BarberTime orders to CustomerInvoice format
+2. Map Stylora orders to CustomerInvoice format
 3. Include line items (services + products)
 4. Handle VAT calculations (25%)
 5. Add invoice reference to orders table
@@ -209,7 +209,7 @@ CREATE TABLE unimicroAccountMapping (
 ## Benefits for Salon Owners
 
 1. **Eliminates Double Entry**
-   - Sales automatically flow from BarberTime to accounting
+   - Sales automatically flow from Stylora to accounting
    - No manual invoice creation needed
    - Reduces errors and saves time
 
@@ -238,13 +238,13 @@ CREATE TABLE unimicroAccountMapping (
 - Unimicro API access is included with Unimicro subscription
 - No additional API fees (typically)
 - Salon must have active Unimicro account
-- BarberTime can offer this as premium feature (e.g., "Bedrift" plan)
+- Stylora can offer this as premium feature (e.g., "Bedrift" plan)
 
 ## Competitive Advantage
 
 - Most salon software in Norway lacks accounting integration
 - Unimicro is widely used by Norwegian SMBs
-- This feature would differentiate BarberTime significantly
+- This feature would differentiate Stylora significantly
 - Targets professional salons with accountants
 
 ## Next Steps
@@ -307,4 +307,4 @@ CREATE TABLE unimicroAccountMapping (
 
 ## Conclusion
 
-Unimicro integration is highly feasible and would provide significant value to BarberTime users. The API is well-documented, uses standard technologies, and covers all necessary accounting operations. This feature would position BarberTime as a complete business solution for Norwegian salons, not just a booking system.
+Unimicro integration is highly feasible and would provide significant value to Stylora users. The API is well-documented, uses standard technologies, and covers all necessary accounting operations. This feature would position Stylora as a complete business solution for Norwegian salons, not just a booking system.

@@ -99,7 +99,7 @@ export function initSentry() {
     ],
     
     // Release tracking
-    release: import.meta.env.VITE_SENTRY_RELEASE || `barbertime@${import.meta.env.VITE_APP_VERSION}`,
+    release: import.meta.env.VITE_SENTRY_RELEASE || `stylora@${import.meta.env.VITE_APP_VERSION}`,
   });
 
   console.log(`✅ Sentry initialized for ${environment} environment`);

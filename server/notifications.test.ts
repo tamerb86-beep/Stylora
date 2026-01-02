@@ -9,7 +9,7 @@ function createTestContext(): { ctx: TrpcContext } {
   const user: AuthenticatedUser = {
     id: 1,
     openId: "test-owner",
-    email: "owner@barbertime.no",
+    email: "owner@stylora.no",
     name: "Test Owner",
     loginMethod: "email",
     role: "owner",

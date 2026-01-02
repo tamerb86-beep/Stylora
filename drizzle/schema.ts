@@ -18,7 +18,7 @@ import {
 } from "drizzle-orm/mysql-core";
 
 /**
- * BarberTime SaaS Database Schema
+ * Stylora SaaS Database Schema
  * Multi-tenant architecture with row-based isolation
  */
 

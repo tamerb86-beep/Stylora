@@ -1,4 +1,4 @@
-# Vipps Payment Integration Guide for BarberTime
+# Vipps Payment Integration Guide for Stylora
 
 **Author:** Stylora Team  
 **Last Updated:** December 18, 2024  
@@ -8,7 +8,7 @@
 
 ## Introduction
 
-This comprehensive guide walks you through the process of integrating Vipps payment into your BarberTime salon management system. Vipps is Norway's most popular mobile payment solution, used by over 4 million Norwegians for instant and secure transactions.
+This comprehensive guide walks you through the process of integrating Vipps payment into your Stylora salon management system. Vipps is Norway's most popular mobile payment solution, used by over 4 million Norwegians for instant and secure transactions.
 
 By enabling Vipps payments on your online booking page, you provide customers with a familiar, trusted payment method that significantly improves conversion rates and reduces no-shows through upfront payment collection.
 
@@ -23,7 +23,7 @@ Before you begin, ensure you have the following:
 | **Norwegian Business** | Your salon must be registered as a business in Norway with a valid organization number |
 | **Bank Account** | A Norwegian business bank account for receiving payments |
 | **Vipps Business Account** | An active Vipps business account (we'll guide you through setup) |
-| **Admin Access** | Administrator access to your BarberTime system |
+| **Admin Access** | Administrator access to your Stylora system |
 | **Time Required** | Approximately 30-45 minutes for complete setup |
 
 ---
@@ -82,7 +82,7 @@ You will be prompted to provide:
 
 | Field | Description | Example |
 |-------|-------------|---------|
-| **Application Name** | A descriptive name for your integration | "BarberTime Online Booking" |
+| **Application Name** | A descriptive name for your integration | "Stylora Online Booking" |
 | **Environment** | Choose **Production** for live payments | Production |
 | **API Product** | Select **"eCommerce API"** | eCommerce API |
 
@@ -101,13 +101,13 @@ After creation, Vipps will display four critical pieces of information. **Copy a
 
 ---
 
-## Step 4: Configure BarberTime Payment Settings
+## Step 4: Configure Stylora Payment Settings
 
-Now that you have your Vipps API credentials, it's time to configure them in your BarberTime system.
+Now that you have your Vipps API credentials, it's time to configure them in your Stylora system.
 
 ### 4.1 Access Settings Page
 
-1. Log in to your BarberTime admin dashboard
+1. Log in to your Stylora admin dashboard
 2. Navigate to **Settings** in the left sidebar
 3. Click on the **"Betaling"** (Payment) tab
 
@@ -121,7 +121,7 @@ When enabled, a configuration form will appear below.
 
 Fill in the four fields with the credentials you obtained from Vipps Portal:
 
-| Field in BarberTime | Vipps Credential | Where to Find It |
+| Field in Stylora | Vipps Credential | Where to Find It |
 |-------------------|-----------------|------------------|
 | **Client ID** | Client ID | Vipps Portal → Developer → API Keys |
 | **Client Secret** | Client Secret | Shown once during key creation |
@@ -172,7 +172,7 @@ Use the Vipps test environment or complete a small real transaction (which you c
 
 1. Customer approves payment in Vipps app
 2. Customer is redirected back to your booking confirmation page
-3. Appointment is created in BarberTime with status **"confirmed"**
+3. Appointment is created in Stylora with status **"confirmed"**
 4. Customer receives booking confirmation
 
 ---
@@ -191,7 +191,7 @@ You can monitor Vipps transactions in two places:
 
 | Platform | What You Can See |
 |----------|-----------------|
-| **BarberTime Dashboard** | Appointments with payment status, booking details |
+| **Stylora Dashboard** | Appointments with payment status, booking details |
 | **Vipps Portal** | Transaction history, settlement reports, refunds |
 
 ### 6.3 Settlement Schedule
@@ -238,7 +238,7 @@ Vipps typically settles funds to your bank account within **1-2 business days** 
 **Solution:**
 1. Log in to Vipps Portal
 2. Navigate to **Developer → API Keys → Your Application**
-3. Add your BarberTime domain to the **Allowed Callback URLs** list:
+3. Add your Stylora domain to the **Allowed Callback URLs** list:
    - `https://your-domain.com/book/success`
    - `https://your-domain.com/book`
 
@@ -247,7 +247,7 @@ Vipps typically settles funds to your bank account within **1-2 business days** 
 **Cause:** Vipps not enabled in payment settings
 
 **Solution:**
-1. Go to BarberTime Settings → Betaling
+1. Go to Stylora Settings → Betaling
 2. Ensure the **"Vipps-betaling"** toggle is **ON**
 3. Click **"Lagre innstillinger"** to save
 
@@ -275,7 +275,7 @@ Ensure your Vipps integration complies with:
 - **GDPR** (General Data Protection Regulation)
 - **Norwegian Privacy Laws** (Personopplysningsloven)
 
-> **Note:** BarberTime handles all payment processing securely. You never store or process raw payment card data, reducing your PCI compliance burden.
+> **Note:** Stylora handles all payment processing securely. You never store or process raw payment card data, reducing your PCI compliance burden.
 
 ---
 
@@ -296,9 +296,9 @@ For further assistance and detailed technical documentation, refer to these offi
 
 If you encounter issues not covered in this guide, contact support:
 
-**BarberTime Support:**
-- Email: support@barbertime.no
-- Help Center: [https://help.barbertime.no](https://help.barbertime.no)
+**Stylora Support:**
+- Email: support@stylora.no
+- Help Center: [https://help.stylora.no](https://help.stylora.no)
 
 **Vipps Support:**
 - Business Support: +47 22 48 28 00
@@ -309,7 +309,7 @@ If you encounter issues not covered in this guide, contact support:
 
 ## Conclusion
 
-Congratulations! You have successfully integrated Vipps payments into your BarberTime salon management system. Your customers can now book appointments and pay instantly using Norway's most trusted mobile payment solution.
+Congratulations! You have successfully integrated Vipps payments into your Stylora salon management system. Your customers can now book appointments and pay instantly using Norway's most trusted mobile payment solution.
 
 By offering Vipps as a payment option, you can expect:
 

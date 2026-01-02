@@ -265,7 +265,7 @@ export default function SaasAdminTenantDetails() {
             <h1 className="text-3xl font-bold">{tenant.name}</h1>
             <p className="text-muted-foreground mt-1">
               <code className="text-sm bg-muted px-2 py-1 rounded">
-                {tenant.subdomain}.barbertime.app
+                {tenant.subdomain}.stylora.app
               </code>
             </p>
           </div>

@@ -28,7 +28,7 @@
 - [ ] Go to Railway dashboard
 - [ ] Click **"New Project"**
 - [ ] Select **"Deploy from GitHub repo"**
-- [ ] Choose `barbertime-website` repository
+- [ ] Choose `stylora-website` repository
 - [ ] Railway starts initial deployment
 
 ### Step 2: Add MySQL Database

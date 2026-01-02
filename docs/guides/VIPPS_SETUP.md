@@ -1,6 +1,6 @@
 # Vipps Payment Integration Setup Guide
 
-This document explains how to set up and configure Vipps payment gateway for BarberTime.
+This document explains how to set up and configure Vipps payment gateway for Stylora.
 
 ## Overview
 

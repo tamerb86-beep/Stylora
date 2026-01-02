@@ -141,7 +141,7 @@ SMS_PROVIDER=twilio
 # Twilio (https://www.twilio.com)
 SMS_API_KEY=your-twilio-account-sid
 SMS_API_SECRET=your-twilio-auth-token
-SMS_SENDER_ID=BarberTime
+SMS_SENDER_ID=Stylora
 
 # Or PSWinCom (Norway) / LinkMobility
 # SMS_API_KEY=your-api-key
